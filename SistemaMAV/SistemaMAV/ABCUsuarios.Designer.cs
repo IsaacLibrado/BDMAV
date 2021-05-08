@@ -257,6 +257,7 @@ namespace SistemaMAV
             this.btnAdd.Size = new System.Drawing.Size(39, 35);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnGuardar
             // 
@@ -268,6 +269,7 @@ namespace SistemaMAV
             this.btnGuardar.Size = new System.Drawing.Size(39, 35);
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // ABCUsuarios
             // 
