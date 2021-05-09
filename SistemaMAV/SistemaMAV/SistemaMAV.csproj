@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABCMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABCMateriales.Designer.cs">
+      <DependentUpon>ABCMateriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABCUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ABCMateriales.resx">
+      <DependentUpon>ABCMateriales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABCUsuarios.resx">
       <DependentUpon>ABCUsuarios.cs</DependentUpon>
     </EmbeddedResource>
