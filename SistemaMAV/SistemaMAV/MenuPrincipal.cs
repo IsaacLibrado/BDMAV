@@ -695,5 +695,10 @@ namespace SistemaMAV
             ocultarSubMenu();
             AsignarTitulo("Consulta de registros");
         }
+
+        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cn.Close();
+        }
     }
 }
