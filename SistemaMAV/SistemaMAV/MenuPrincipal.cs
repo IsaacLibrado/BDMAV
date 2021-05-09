@@ -581,6 +581,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Materiales");
+            abrirPantallas(new ABCMateriales());
         }
 
         /// <summary>
