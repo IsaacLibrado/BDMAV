@@ -24,7 +24,7 @@ namespace SistemaMAV
         //data tables para la info
         DataTable dt;
         DataTable indtu;
-        int tipoOp; //0.Nada 1.Alta 2.Baja 3.Cambio
+        int tipoOp; //0.Nada 1.Alta 2.Cambio
 
         /// <summary>
         /// Constructor para crear los objetos
@@ -118,6 +118,10 @@ namespace SistemaMAV
 
                 //cerramos el reader
                 respuesta.Close();
+
+                respuesta.Close();
+                DesactivarCampos();
+                tipoOp = 0;
             }
         }
         
@@ -128,24 +132,15 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Codigo de seguridad. EL usuario debe ingresar cada campo si desea guardar una acción
-            if (txbId.Text != "" || txbNombre.Text != "" || txbEtiqueta.Text != "" || txbModelo.Text != "" || txbNumSerie.Text != "")
+            switch (tipoOp)
             {
-                switch (tipoOp)
-                {
-                    case 1:
-                        AnadirMaterial();
-                        break;
-                    case 2:
-                        EliminarMaterial();
-                        break;
-                    case 3:
-                        EditarMaterial();
-                        break;
-                }
+                case 1:
+                    AnadirMaterial();
+                    break;
+                case 2:
+                    EditarMaterial();
+                    break;
             }
-            else MessageBox.Show("Porfavor, complete los campos necesarios", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
         
         /// <summary>
@@ -180,18 +175,28 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.VarChar);
             tipos.Add(SqlDbType.TinyInt);
 
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Anadir_Material", parametros, valores, tipos, MenuPrincipal.cn);
-
-            try
+            if (ValidarCamposVacios(valores))
             {
-                consulta.ExecuteNonQuery();
-            }
-            catch
-            {
-                MessageBox.Show("No se pudo agregar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Anadir_Material", parametros, valores, tipos, MenuPrincipal.cn);
 
-            CargarTabla();
+                try
+                {
+                    consulta.ExecuteNonQuery();
+                    VaciarCampos();
+                    DesactivarCampos();
+                    tipoOp = 0;
+                }
+                catch
+                {
+                    MessageBox.Show("No se pudo agregar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                CargarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Faltan valores en los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -226,18 +231,28 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.VarChar);
             tipos.Add(SqlDbType.TinyInt);
 
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Eliminar_Material", parametros, valores, tipos, MenuPrincipal.cn);
-
-            try
+            if (ValidarCamposVacios(valores))
             {
-                consulta.ExecuteNonQuery();
-            }
-            catch
-            {
-                MessageBox.Show("No se pudo eliminar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Eliminar_Material", parametros, valores, tipos, MenuPrincipal.cn);
 
-            CargarTabla();
+                try
+                {
+                    consulta.ExecuteNonQuery();
+                    VaciarCampos();
+                    DesactivarCampos();
+                    tipoOp = 0;
+                }
+                catch
+                {
+                    MessageBox.Show("No se pudo eliminar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                CargarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Faltan valores en los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -272,18 +287,28 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.VarChar);
             tipos.Add(SqlDbType.TinyInt);
 
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Material", parametros, valores, tipos, MenuPrincipal.cn);
-
-            try
+            if (ValidarCamposVacios(valores))
             {
-                consulta.ExecuteNonQuery();
-            }
-            catch
-            {
-                MessageBox.Show("No se pudo editar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Material", parametros, valores, tipos, MenuPrincipal.cn);
 
-            CargarTabla();
+                try
+                {
+                    consulta.ExecuteNonQuery();
+                    VaciarCampos();
+                    DesactivarCampos();
+                    tipoOp = 0;
+                }
+                catch
+                {
+                    MessageBox.Show("No se pudo editar el material", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                CargarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Faltan valores en los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -314,13 +339,8 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txbId.Enabled = true;
-            txbNombre.Enabled = true;
-            txbEtiqueta.Enabled = true;
-            cmbMarca.Enabled = true;
-            txbModelo.Enabled = true;
-            txbNumSerie.Enabled = true;
-            cmbEstado.Enabled = true;
+            VaciarCampos();
+            ActivarCampos();
 
             tipoOp = 1;
         }
@@ -332,24 +352,21 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //El id no se puede modificar pues será con el que se sabra que registro editar
-            txbId.Enabled = false;
-            txbNombre.Enabled = true;
-            txbEtiqueta.Enabled = true;
-            cmbMarca.Enabled = true;
-            txbModelo.Enabled = true;
-            txbNumSerie.Enabled = true;
-            cmbEstado.Enabled = true;
+            if (tipoOp == 1 || txbId.Text=="")
+            {
+                MessageBox.Show("Debes seleccionar un material existente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //activamos todos los controles
+                ActivarCampos();
 
-            txbId.Clear();
-            txbNombre.Clear();
-            txbEtiqueta.Clear();
-            cmbMarca.Text = "";
-            txbModelo.Clear();
-            txbNumSerie.Clear();
-            cmbEstado.Text = "";
+                //cambiamos a operacion de agregacon
+                tipoOp = 2;
 
-            tipoOp = 3;
+                //El id no se puede modificar pues será con el que se sabra que registro editar
+                txbId.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -359,7 +376,56 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Se bloquean y borran los campos para obligar al usuario a seleccionar un campo del datagrid y asi evitar errores humanos
+            if (tipoOp != 1 && txbId.Text != "")
+            {
+                DialogResult confirmar;
+
+                confirmar = MessageBox.Show("¿Está seguro que desea eliminar el registro seleccionado?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (confirmar == DialogResult.Yes)
+                {
+                    EliminarMaterial();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un usuario existente para eliminar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Metodo para validar que sólo se acepten numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// metodo para activar los campos
+        /// </summary>
+        private void ActivarCampos()
+        {
+            txbId.Enabled = true;
+            txbNombre.Enabled = true;
+            txbEtiqueta.Enabled = true;
+            cmbMarca.Enabled = true;
+            txbModelo.Enabled = true;
+            txbNumSerie.Enabled = true;
+            cmbEstado.Enabled = true;
+        }
+
+        /// <summary>
+        /// metodo para desactivar los campos
+        /// </summary>
+        private void DesactivarCampos()
+        {
             txbId.Enabled = false;
             txbNombre.Enabled = false;
             txbEtiqueta.Enabled = false;
@@ -367,18 +433,35 @@ namespace SistemaMAV
             txbModelo.Enabled = false;
             txbNumSerie.Enabled = false;
             cmbEstado.Enabled = false;
-
-            txbId.Clear();
-            txbNombre.Clear();
-            txbEtiqueta.Clear();
-            cmbMarca.Text="";
-            txbModelo.Clear();
-            txbNumSerie.Clear();
-            cmbEstado.Text="";
-
-            tipoOp = 2;
         }
 
-       
+        /// <summary>
+        /// Metodo para vaciar los campos
+        /// </summary>
+        private void VaciarCampos()
+        {
+            //vaciamos los campos
+            txbId.Text = "";
+            txbNombre.Text = "";
+            txbEtiqueta.Text = "";
+            txbModelo.Text = "";
+            txbNumSerie.Text = "";
+        }
+
+        /// <summary>
+        /// Metodo para validar que todos los datos estén rellenos
+        /// </summary>
+        /// <param name="pValores"></param>
+        /// <returns>false si falta alguno</returns>
+        private bool ValidarCamposVacios(List<string> pValores)
+        {
+            foreach (string valor in pValores)
+            {
+                if (valor == "")
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

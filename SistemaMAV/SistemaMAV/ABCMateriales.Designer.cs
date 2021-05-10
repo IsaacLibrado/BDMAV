@@ -125,10 +125,12 @@
             this.txbId.Name = "txbId";
             this.txbId.Size = new System.Drawing.Size(100, 20);
             this.txbId.TabIndex = 37;
+            this.txbId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(126, 265);
             this.cmbEstado.Name = "cmbEstado";
@@ -246,6 +248,7 @@
             // cmbMarca
             // 
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.Enabled = false;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(126, 142);
             this.cmbMarca.Name = "cmbMarca";

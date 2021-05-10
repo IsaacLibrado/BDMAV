@@ -19,7 +19,7 @@ namespace SistemaMAV
         //data tables para la info
         DataTable dt;
         DataTable indtu;
-        int tipoOp; //0.Nada 1.Alta 2.Baja 3.Cambio
+        int tipoOp; //0.Nada 1.Alta 2.Cambio
 
         /// <summary>
         /// Constructor para crear los objetos
@@ -390,7 +390,7 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (tipoOp == 1)
+            if (tipoOp == 1 || txbMatricula.Text=="")
             {
                 MessageBox.Show("Debes seleccionar un usuario existente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
