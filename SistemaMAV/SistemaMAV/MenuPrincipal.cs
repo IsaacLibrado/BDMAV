@@ -563,6 +563,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Estados");
+            abrirPantallas(new ABCEstados());
         }
 
         /// <summary>
