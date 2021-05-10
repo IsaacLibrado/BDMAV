@@ -26,6 +26,12 @@ namespace SistemaMAV
         //conexion con la base de datos
         public static SqlConnection cn;
 
+        //validar conexion
+        bool conectado;
+
+        //usuario actual
+        public static string usuarioActual;
+
         //La pantalla que se muestra en el contenedor central
         private Form pantallaActiva = null;
 
@@ -34,6 +40,7 @@ namespace SistemaMAV
             //inicializamos lo básico
             InitializeComponent();
             PersonalizarDisenio();
+            conectado = false;
         }
 
         #region disenio
@@ -115,6 +122,8 @@ namespace SistemaMAV
         public static void ValidarLogIn(string pUserName, string pCargo)
         {
             MenuPrincipal formActual = (MenuPrincipal)ActiveForm;
+
+            MenuPrincipal.usuarioActual = pUserName;
 
             //colocamos los datos del usuario
             formActual.lblUserName.Text = pUserName;
@@ -333,6 +342,7 @@ namespace SistemaMAV
 
             if (validarConexion(nombreServer))
             {
+                conectado= true;
                 abrirPantallas(new LogIn(cn));
             }
             else
@@ -699,7 +709,10 @@ namespace SistemaMAV
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cn.Close();
+            if (conectado)
+            {
+                cn.Close();
+            }
         }
     }
 }

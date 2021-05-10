@@ -47,6 +47,7 @@ namespace SistemaMAV
             this.txbMatricula = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txbBusqueda = new System.Windows.Forms.TextBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@ namespace SistemaMAV
             // 
             this.txbNombre.Enabled = false;
             this.txbNombre.Location = new System.Drawing.Point(126, 64);
+            this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(100, 20);
             this.txbNombre.TabIndex = 1;
@@ -98,6 +100,7 @@ namespace SistemaMAV
             // 
             this.txbApPat.Enabled = false;
             this.txbApPat.Location = new System.Drawing.Point(126, 104);
+            this.txbApPat.MaxLength = 50;
             this.txbApPat.Name = "txbApPat";
             this.txbApPat.Size = new System.Drawing.Size(100, 20);
             this.txbApPat.TabIndex = 3;
@@ -117,6 +120,7 @@ namespace SistemaMAV
             // 
             this.txbApMat.Enabled = false;
             this.txbApMat.Location = new System.Drawing.Point(126, 145);
+            this.txbApMat.MaxLength = 50;
             this.txbApMat.Name = "txbApMat";
             this.txbApMat.Size = new System.Drawing.Size(100, 20);
             this.txbApMat.TabIndex = 5;
@@ -136,6 +140,7 @@ namespace SistemaMAV
             // 
             this.txbEmail.Enabled = false;
             this.txbEmail.Location = new System.Drawing.Point(126, 189);
+            this.txbEmail.MaxLength = 180;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(100, 20);
             this.txbEmail.TabIndex = 7;
@@ -155,9 +160,11 @@ namespace SistemaMAV
             // 
             this.txbTelefono.Enabled = false;
             this.txbTelefono.Location = new System.Drawing.Point(126, 231);
+            this.txbTelefono.MaxLength = 10;
             this.txbTelefono.Name = "txbTelefono";
             this.txbTelefono.Size = new System.Drawing.Size(100, 20);
             this.txbTelefono.TabIndex = 9;
+            this.txbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
             // label5
             // 
@@ -174,6 +181,7 @@ namespace SistemaMAV
             // 
             this.txbContra.Enabled = false;
             this.txbContra.Location = new System.Drawing.Point(126, 303);
+            this.txbContra.MaxLength = 25;
             this.txbContra.Name = "txbContra";
             this.txbContra.Size = new System.Drawing.Size(100, 20);
             this.txbContra.TabIndex = 11;
@@ -202,9 +210,11 @@ namespace SistemaMAV
             // 
             this.txbMatricula.Enabled = false;
             this.txbMatricula.Location = new System.Drawing.Point(126, 26);
+            this.txbMatricula.MaxLength = 8;
             this.txbMatricula.Name = "txbMatricula";
             this.txbMatricula.Size = new System.Drawing.Size(100, 20);
             this.txbMatricula.TabIndex = 15;
+            this.txbMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
             // label7
             // 
@@ -220,10 +230,23 @@ namespace SistemaMAV
             // txbBusqueda
             // 
             this.txbBusqueda.Location = new System.Drawing.Point(409, 19);
+            this.txbBusqueda.MaxLength = 153;
             this.txbBusqueda.Name = "txbBusqueda";
             this.txbBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txbBusqueda.TabIndex = 17;
             this.txbBusqueda.TextChanged += new System.EventHandler(this.txbBusqueda_TextChanged);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackgroundImage = global::SistemaMAV.Properties.Resources.Searching;
+            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Location = new System.Drawing.Point(252, 7);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(39, 35);
+            this.btnConsulta.TabIndex = 22;
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnDelete
             // 
@@ -235,6 +258,7 @@ namespace SistemaMAV
             this.btnDelete.Size = new System.Drawing.Size(39, 35);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -246,6 +270,7 @@ namespace SistemaMAV
             this.btnEdit.Size = new System.Drawing.Size(39, 35);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -277,6 +302,7 @@ namespace SistemaMAV
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(521, 346);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -333,5 +359,6 @@ namespace SistemaMAV
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

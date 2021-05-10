@@ -85,7 +85,14 @@ namespace SistemaMAV
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Entrar();
+                if (txbUsuario.Text == "")
+                {
+                    txbUsuario.Focus();
+                }
+                else
+                {
+                    Entrar();
+                }
             }
         }
 
@@ -151,13 +158,14 @@ namespace SistemaMAV
                     MessageBox.Show("Usuario o contraseña incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
                 }
+                respuesta.Close();
             }
             else
             {
                 MessageBox.Show("Ingresa un usuario válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            respuesta.Close();
+            
         }
 
         
@@ -174,7 +182,14 @@ namespace SistemaMAV
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txbContra.Focus();
+                if (txbContra.Text == "")
+                {
+                    txbContra.Focus();
+                }
+                else
+                {
+                    Entrar();
+                }
             }
         }
 
