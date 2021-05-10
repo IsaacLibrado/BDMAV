@@ -48,6 +48,7 @@
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.dgVistaTabla = new System.Windows.Forms.DataGridView();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVistaTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +130,7 @@
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(126, 265);
             this.cmbEstado.Name = "cmbEstado";
@@ -246,11 +248,24 @@
             // cmbMarca
             // 
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.Enabled = false;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(126, 142);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(100, 21);
             this.cmbMarca.TabIndex = 44;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackgroundImage = global::SistemaMAV.Properties.Resources.Searching;
+            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Location = new System.Drawing.Point(252, 1);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(39, 35);
+            this.btnConsulta.TabIndex = 45;
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // ABCMateriales
             // 
@@ -258,6 +273,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(521, 346);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -310,5 +326,6 @@
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.DataGridView dgVistaTabla;
         private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

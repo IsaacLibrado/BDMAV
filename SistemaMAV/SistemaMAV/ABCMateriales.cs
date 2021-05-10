@@ -76,7 +76,7 @@ namespace SistemaMAV
         private void txbBusqueda_TextChanged(object sender, EventArgs e)
         {
             ///obtenemos los datos del stored proccedure
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -293,7 +293,7 @@ namespace SistemaMAV
         private void CargarTabla()
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -379,6 +379,15 @@ namespace SistemaMAV
             tipoOp = 2;
         }
 
-       
+        /// <summary>
+        /// Metodo para llevar al usuario a la pantalla de consultas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal.AsignarTitulo("Consultar materiales");
+            MenuPrincipal.abrirPantallas(new ConsultarMateriales());
+        }
     }
 }
