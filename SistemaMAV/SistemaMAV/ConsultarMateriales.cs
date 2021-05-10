@@ -18,8 +18,15 @@ namespace SistemaMAV
         public ConsultarMateriales()
         {
             InitializeComponent();
+
+            string cargo = MenuPrincipal.cargoActual;
+
+            if(cargo!="Administrador" && cargo!="Jefe")
+            {
+                btnRegresar.Visible = false;
+            }
         }
-        
+
         private void ConsultarMateriales_Load(object sender, EventArgs e)
         {
             CargarTabla();

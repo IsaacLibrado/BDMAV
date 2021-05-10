@@ -58,6 +58,12 @@
     <Compile Include="ABCMateriales.Designer.cs">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABCTiposUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABCTiposUsuario.Designer.cs">
+      <DependentUpon>ABCTiposUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABCUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABCMateriales.resx">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABCTiposUsuario.resx">
+      <DependentUpon>ABCTiposUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABCUsuarios.resx">
       <DependentUpon>ABCUsuarios.cs</DependentUpon>

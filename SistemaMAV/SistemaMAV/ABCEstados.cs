@@ -30,6 +30,7 @@ namespace SistemaMAV
             InitializeComponent();
             dt = new DataTable();
         }
+
         /// <summary>
         /// Metodo para cargar los datos al inicio
         /// </summary>
@@ -66,7 +67,7 @@ namespace SistemaMAV
         private void dgVistaTabla_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //si el elegido no es null
-            if (dgVistaTabla.CurrentRow != null)
+            if (dgVistaTabla.CurrentRow.Cells[0].Value.ToString() != string.Empty)
             {
                 //obtenemos la matricula
                 string pMatricula;

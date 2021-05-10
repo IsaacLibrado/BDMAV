@@ -200,6 +200,7 @@ namespace SistemaMAV
             // cmbTipoUsuario
             // 
             this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoUsuario.Enabled = false;
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Location = new System.Drawing.Point(126, 268);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";

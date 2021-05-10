@@ -12,9 +12,9 @@ using System.Windows.Forms;
 namespace SistemaMAV
 {
     /// <summary>
-    /// Clase que define a la pantalla de usuarios
+    /// Clase que define a la pantalla de estados
     /// </summary>
-    public partial class ABCUsuarios : Form
+    public partial class ABCTiposUsuario : Form
     {
         //data tables para la info
         DataTable dt;
@@ -24,11 +24,9 @@ namespace SistemaMAV
         /// <summary>
         /// Constructor para crear los objetos
         /// </summary>
-        public ABCUsuarios()
+        public ABCTiposUsuario()
         {
-            tipoOp = 0;
             InitializeComponent();
-            dt = new DataTable();
         }
 
         /// <summary>
@@ -39,20 +37,6 @@ namespace SistemaMAV
         private void ABCUsuarios_Load(object sender, EventArgs e)
         {
             CargarTabla();
-
-            //obtenemos los datos de la tabla de tipos de usuario
-            SqlCommand consulta = MenuPrincipal.DefinirConsulta("sp_Cargar_Tipos_Usuario",  MenuPrincipal.cn);
-            SqlDataReader respuesta = consulta.ExecuteReader();
-            indtu = new DataTable();
-            indtu.Load(respuesta);
-
-
-            //cargamos el combo box con la tabla
-            cmbTipoUsuario.DataSource = indtu;
-            cmbTipoUsuario.DisplayMember ="Tipo_Usuario";
-            cmbTipoUsuario.ValueMember = "ID_Tipo_Usuario";
-
-
         }
 
         /// <summary>
@@ -63,7 +47,7 @@ namespace SistemaMAV
         private void txbBusqueda_TextChanged(object sender, EventArgs e)
         {
             ///obtenemos los datos del stored proccedure
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Usuario_PorNombre_Reduc", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Tipo_Usuario_PorNombre_Reduc", "@pTipo_Usuario", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -88,24 +72,13 @@ namespace SistemaMAV
                 pMatricula = dgVistaTabla.CurrentRow.Cells[0].Value.ToString();
 
                 //hacemos la consulta con la matricula
-                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Obtener_Datos_Usuario", "@pMatricula", pMatricula, SqlDbType.Int, MenuPrincipal.cn);
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Obtener_Datos_TiposUsuario", "@pID_Tipo_Usuario", pMatricula, SqlDbType.VarBinary, MenuPrincipal.cn);
                 SqlDataReader respuesta = consulta.ExecuteReader();
                 respuesta.Read();
 
                 //obtenemos los datos de la base de datos
-                txbMatricula.Text= respuesta["Matricula"].ToString();
-                txbNombre.Text = respuesta["Nombre"].ToString();
-                txbApPat.Text = respuesta["ApPat"].ToString();
-                txbApMat.Text = respuesta["ApMat"].ToString();
-                txbEmail.Text = respuesta["Email"].ToString();
-                txbTelefono.Text = respuesta["Telefono"].ToString();
-                txbContra.Text = respuesta["Contrasenia"].ToString();
-
-                //obtenemos el indice que corresponde
-                cmbTipoUsuario.SelectedIndex = Convert.ToInt32(respuesta["ID_Tipo_Usuario"])-1;
-
-                //desencriptamos la contraseña para mostrarla
-                txbContra.Text = Encriptacion.DesEncriptar(txbContra.Text);
+                txbID.Text = respuesta["ID_Tipo_Usuario"].ToString();
+                txbTipoUsuario.Text = respuesta["Tipo_Usuario"].ToString();
 
                 //cerramos el reader
                 respuesta.Close();
@@ -122,7 +95,7 @@ namespace SistemaMAV
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //dependiendo el tipo de operacion realiza un stored procceudre
-            switch(tipoOp)
+            switch (tipoOp)
             {
                 case 1:
                     AnadirUsuario();
@@ -138,43 +111,10 @@ namespace SistemaMAV
         /// </summary>
         private void AnadirUsuario()
         {
-            //definimos los nombres de los parametros
-            List<string> parametros = new List<string>();
-            parametros.Add("@pMatricula");
-            parametros.Add("@pNombre");
-            parametros.Add("@pApPat");
-            parametros.Add("@pApMat");
-            parametros.Add("@pEmail");
-            parametros.Add("@pTelefono");
-            parametros.Add("@pID_Tipo_Usuario"); 
-            parametros.Add("@pContrasenia");
-
-            //definimos los valores de los parametros
-            List<string> valores = new List<string>();
-            valores.Add(txbMatricula.Text);
-            valores.Add(txbNombre.Text);
-            valores.Add(txbApPat.Text);
-            valores.Add(txbApMat.Text);
-            valores.Add(txbEmail.Text);
-            valores.Add(txbTelefono.Text);
-            valores.Add(cmbTipoUsuario.SelectedValue.ToString());
-            valores.Add(Encriptacion.Encriptar(txbContra.Text));
-
-            //definimos los tipos de los parametros
-            List<SqlDbType> tipos = new List<SqlDbType>();
-            tipos.Add(SqlDbType.Int);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.BigInt);
-            tipos.Add(SqlDbType.TinyInt);
-            tipos.Add(SqlDbType.VarChar);
-
-            if (ValidarCamposVacios(valores))
+            if (txbTipoUsuario.Text != "")
             {
                 //hacemos la consulta
-                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Anadir_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Anadir_Tipo_Usuario", "@pTipo_Usuario", txbTipoUsuario.Text, SqlDbType.VarChar, MenuPrincipal.cn);
 
                 //ejecutamos el query y atrapamos errores
                 try
@@ -186,7 +126,7 @@ namespace SistemaMAV
                 }
                 catch
                 {
-                    MessageBox.Show("No se pudo agregar al usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo agregar el tipo de usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 CargarTabla();
@@ -204,41 +144,24 @@ namespace SistemaMAV
         {
             //definimos los nombres de los parametros
             List<string> parametros = new List<string>();
-            parametros.Add("@pMatricula");
-            parametros.Add("@pNombre");
-            parametros.Add("@pApPat");
-            parametros.Add("@pApMat");
-            parametros.Add("@pEmail");
-            parametros.Add("@pTelefono");
             parametros.Add("@pID_Tipo_Usuario");
-            parametros.Add("@pContrasenia");
+            parametros.Add("@pTipo_Usuario");
 
             //definimos los valores de los parametros
             List<string> valores = new List<string>();
-            valores.Add(txbMatricula.Text);
-            valores.Add(txbNombre.Text);
-            valores.Add(txbApPat.Text);
-            valores.Add(txbApMat.Text);
-            valores.Add(txbEmail.Text);
-            valores.Add(txbTelefono.Text);
-            valores.Add(cmbTipoUsuario.SelectedValue.ToString());
-            valores.Add(Encriptacion.Encriptar(txbContra.Text));
-
+            valores.Add(txbID.Text);
+            valores.Add(txbTipoUsuario.Text);
+            
             //definimos los tipos de los parametros
             List<SqlDbType> tipos = new List<SqlDbType>();
-            tipos.Add(SqlDbType.Int);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.VarChar);
-            tipos.Add(SqlDbType.BigInt);
             tipos.Add(SqlDbType.TinyInt);
             tipos.Add(SqlDbType.VarChar);
+            
 
             if (ValidarCamposVacios(valores))
             {
                 //hacemos la consulta
-                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Tipo_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
 
                 //ejecutamos el query y atrapamos errores
                 try
@@ -250,7 +173,7 @@ namespace SistemaMAV
                 }
                 catch
                 {
-                    MessageBox.Show("No se pudo editar al usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo editar el tipo de usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 CargarTabla();
@@ -267,7 +190,7 @@ namespace SistemaMAV
         private void EliminarUsuario()
         {
             //hacemos la consulta
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Eliminar_Usuario", "@pMatricula", txbMatricula.Text, SqlDbType.Int, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Eliminar_Tipo_Usuario", "@pID_Tipo_Usuario", txbID.Text, SqlDbType.TinyInt, MenuPrincipal.cn);
 
             //ejecutamos el query y atrapamos errores
             try
@@ -279,7 +202,7 @@ namespace SistemaMAV
             }
             catch
             {
-                MessageBox.Show("No se pudo eliminar al usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo eliminar el tipo de usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             CargarTabla();
@@ -289,7 +212,7 @@ namespace SistemaMAV
         private void CargarTabla()
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Usuario_PorNombre_Reduc", "@pNombre", " ", SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Tipo_Usuario_PorNombre_Reduc", "@pTipo_Usuario", "", SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -299,12 +222,10 @@ namespace SistemaMAV
             //colocamos el datatable en el datagrid 
             dgVistaTabla.DataSource = dt;
 
-            dgVistaTabla.Columns[1].Width = 200;
-
             //cerramos el reader
             respuesta.Close();
 
-            
+            dgVistaTabla.Columns[0].Visible = false;
         }
 
         /// <summary>
@@ -317,7 +238,7 @@ namespace SistemaMAV
             //activamos todos los controles
             VaciarCampos();
             ActivarCampos();
-           
+
             //cambiamos a operacion de agregacon
             tipoOp = 1;
         }
@@ -328,13 +249,8 @@ namespace SistemaMAV
         private void VaciarCampos()
         {
             //vaciamos los campos
-            txbMatricula.Text = "";
-            txbNombre.Text = "";
-            txbApPat.Text = "";
-            txbApMat.Text = "";
-            txbEmail.Text = "";
-            txbTelefono.Text = "";
-            txbContra.Text = "";
+            txbID.Text = "";
+            txbTipoUsuario.Text = "";
         }
 
         /// <summary>
@@ -342,14 +258,7 @@ namespace SistemaMAV
         /// </summary>
         private void ActivarCampos()
         {
-            txbMatricula.Enabled = true;
-            txbNombre.Enabled = true;
-            txbApPat.Enabled = true;
-            txbApMat.Enabled = true;
-            txbEmail.Enabled = true;
-            txbTelefono.Enabled = true;
-            cmbTipoUsuario.Enabled = true;
-            txbContra.Enabled = true;
+            txbTipoUsuario.Enabled = true;
         }
 
         /// <summary>
@@ -357,14 +266,8 @@ namespace SistemaMAV
         /// </summary>
         private void DesactivarCampos()
         {
-            txbMatricula.Enabled = false;
-            txbNombre.Enabled = false;
-            txbApPat.Enabled = false;
-            txbApMat.Enabled = false;
-            txbEmail.Enabled = false;
-            txbTelefono.Enabled = false;
-            cmbTipoUsuario.Enabled = false;
-            txbContra.Enabled = false;
+            txbID.Enabled = false;
+            txbTipoUsuario.Enabled = false;
         }
 
         /// <summary>
@@ -374,7 +277,7 @@ namespace SistemaMAV
         /// <returns>false si falta alguno</returns>
         private bool ValidarCamposVacios(List<string> pValores)
         {
-            foreach(string valor in pValores)
+            foreach (string valor in pValores)
             {
                 if (valor == "")
                     return false;
@@ -390,9 +293,9 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (tipoOp == 1 || txbMatricula.Text=="")
+            if (tipoOp == 1 || txbID.Text == "")
             {
-                MessageBox.Show("Debes seleccionar un usuario existente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debes seleccionar un Tipo de usuario existente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -403,7 +306,7 @@ namespace SistemaMAV
                 tipoOp = 2;
 
                 //desactivamos el control de la matricula
-                txbMatricula.Enabled = false;
+                txbID.Enabled = false;
             }
         }
 
@@ -416,11 +319,11 @@ namespace SistemaMAV
         {
             MenuPrincipal formActual = (MenuPrincipal)ActiveForm;
 
-            if (txbNombre.Text == MenuPrincipal.usuarioActual)
+            if (txbTipoUsuario.Text == MenuPrincipal.cargoActual)
             {
-                MessageBox.Show("No puedes eliminar al usuario actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No puedes eliminar al tipo de usuario actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (tipoOp != 1 && txbMatricula.Text != "")
+            else if (tipoOp != 1 && txbID.Text != "")
             {
                 DialogResult confirmar;
 
@@ -434,7 +337,7 @@ namespace SistemaMAV
             }
             else
             {
-                MessageBox.Show("Debes seleccionar un usuario existente para eliminar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debes seleccionar un tipo de usuario existente para eliminar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -445,8 +348,8 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            MenuPrincipal.AsignarTitulo("Consultar Usuarios");
-            MenuPrincipal.abrirPantallas(new ConsultarUsuarios());
+            MenuPrincipal.AsignarTitulo("Consultar Estados");
+            MenuPrincipal.abrirPantallas(new ConsultarEstados());
         }
 
         /// <summary>

@@ -105,7 +105,7 @@ namespace SistemaMAV
         private void dgVistaTabla_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //si el elegido no es null
-            if (dgVistaTabla.CurrentRow != null)
+            if (dgVistaTabla.CurrentRow.Cells[0].Value.ToString() != string.Empty)
             {
                 //obtenemos el id
                 string pID;

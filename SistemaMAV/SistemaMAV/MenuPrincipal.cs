@@ -32,6 +32,8 @@ namespace SistemaMAV
         //usuario actual
         public static string usuarioActual;
 
+        public static string cargoActual;
+
         //La pantalla que se muestra en el contenedor central
         private Form pantallaActiva = null;
 
@@ -69,6 +71,7 @@ namespace SistemaMAV
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MaximizeBox = false;
 
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
 
@@ -124,7 +127,7 @@ namespace SistemaMAV
             MenuPrincipal formActual = (MenuPrincipal)ActiveForm;
 
             MenuPrincipal.usuarioActual = pUserName;
-
+            MenuPrincipal.cargoActual = pCargo;
             //colocamos los datos del usuario
             formActual.lblUserName.Text = pUserName;
             formActual.lblCargo.Text = pCargo;
@@ -622,6 +625,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Tipos Usuarios");
+            abrirPantallas(new ABCTiposUsuario());
         }
 
         /// <summary>
@@ -636,6 +640,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("Consultar Materiales");
+            abrirPantallas(new ConsultarMateriales());
         }
 
         /// <summary>
