@@ -33,8 +33,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txbBusqueda = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txbId = new System.Windows.Forms.TextBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@
             this.dgVistaTabla = new System.Windows.Forms.DataGridView();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.btnConsulta = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txbId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVistaTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,26 +107,6 @@
             this.txbBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txbBusqueda.TabIndex = 39;
             this.txbBusqueda.TextChanged += new System.EventHandler(this.txbBusqueda_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(51, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 16);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Id";
-            // 
-            // txbId
-            // 
-            this.txbId.Enabled = false;
-            this.txbId.Location = new System.Drawing.Point(126, 23);
-            this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(100, 20);
-            this.txbId.TabIndex = 37;
-            this.txbId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
             // cmbEstado
             // 
@@ -268,6 +248,26 @@
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(51, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 16);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Id";
+            // 
+            // txbId
+            // 
+            this.txbId.Enabled = false;
+            this.txbId.Location = new System.Drawing.Point(126, 23);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(100, 20);
+            this.txbId.TabIndex = 37;
+            this.txbId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
+            // 
             // ABCMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,8 +312,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txbBusqueda;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -328,5 +326,7 @@
         private System.Windows.Forms.DataGridView dgVistaTabla;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txbId;
     }
 }

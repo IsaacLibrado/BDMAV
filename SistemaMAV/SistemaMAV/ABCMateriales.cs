@@ -117,7 +117,7 @@ namespace SistemaMAV
                 respuesta.Read();
 
                 //obtenemos los datos de la base de datos
-                txbId.Text = respuesta["ID_Material"].ToString();
+                txbId.Text= respuesta["ID_Material"].ToString();
                 txbNombre.Text = respuesta["Nombre"].ToString();
                 txbEtiqueta.Text = respuesta["Etiqueta"].ToString();
                 txbModelo.Text = respuesta["Modelo"].ToString();
@@ -423,7 +423,6 @@ namespace SistemaMAV
         /// </summary>
         private void ActivarCampos()
         {
-            txbId.Enabled = true;
             txbNombre.Enabled = true;
             txbEtiqueta.Enabled = true;
             cmbMarca.Enabled = true;
@@ -460,7 +459,7 @@ namespace SistemaMAV
         }
 
         /// <summary>
-<<<<<<< HEAD
+
         /// Metodo para validar que todos los datos estén rellenos
         /// </summary>
         /// <param name="pValores"></param>
@@ -474,16 +473,6 @@ namespace SistemaMAV
             }
 
             return true;
-=======
-        /// Metodo para llevar al usuario a la pantalla de consultas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnConsulta_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal.AsignarTitulo("Consultar materiales");
-            MenuPrincipal.abrirPantallas(new ConsultarMateriales());
->>>>>>> 34c21ead6b28d544a33b79c52290ebd516b5b8b1
         }
     }
 }
