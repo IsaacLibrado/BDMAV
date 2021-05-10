@@ -653,6 +653,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("Realizar Prestamo");
+            abrirPantallas(new RealizarPrestamo());
         }
 
         /// <summary>

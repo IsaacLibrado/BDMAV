@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealizarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RealizarPrestamo.Designer.cs">
+      <DependentUpon>RealizarPrestamo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ABCMateriales.resx">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +109,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RealizarPrestamo.resx">
+      <DependentUpon>RealizarPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
