@@ -71,6 +71,7 @@ namespace SistemaMAV
 
             dgVistaTabla.DataSource = dt;
             respuesta.Close();
+
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.TinyInt);
             tipos.Add(SqlDbType.VarChar);
 
-            if (ValidarCamposVacios(valores))
+            if (MenuPrincipal.ValidarCamposVacios(valores))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Anadir_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
@@ -193,7 +194,7 @@ namespace SistemaMAV
             }
             else
             {
-                MessageBox.Show("Faltan valores en los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -235,7 +236,7 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.TinyInt);
             tipos.Add(SqlDbType.VarChar);
 
-            if (ValidarCamposVacios(valores))
+            if (MenuPrincipal.ValidarCamposVacios(valores))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
@@ -257,7 +258,7 @@ namespace SistemaMAV
             }
             else
             {
-                MessageBox.Show("Faltan valores en los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -367,21 +368,7 @@ namespace SistemaMAV
             txbContra.Enabled = false;
         }
 
-        /// <summary>
-        /// Metodo para validar que todos los datos estén rellenos
-        /// </summary>
-        /// <param name="pValores"></param>
-        /// <returns>false si falta alguno</returns>
-        private bool ValidarCamposVacios(List<string> pValores)
-        {
-            foreach(string valor in pValores)
-            {
-                if (valor == "")
-                    return false;
-            }
-
-            return true;
-        }
+        
 
         /// <summary>
         /// metodo para realizar la edicion de usuarios

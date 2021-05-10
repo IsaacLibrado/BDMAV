@@ -29,6 +29,8 @@ namespace SistemaMAV
         //validar conexion
         bool conectado;
 
+        private static List<string> palabrasProhibidas=new List<string> {"SELECT","UPDATE", "DELETE","CREATE","DROP","ALTER","WHERE","FROM" };
+
         //usuario actual
         public static string usuarioActual;
 
@@ -720,6 +722,54 @@ namespace SistemaMAV
             {
                 cn.Close();
             }
+        }
+
+        /// <summary>
+        /// Metodo para validar que todos los datos estén rellenos
+        /// </summary>
+        /// <param name="pValores"></param>
+        /// <returns>false si falta alguno</returns>
+        public static bool ValidarCamposVacios(List<string> pValores)
+        {
+            foreach (string valor in pValores)
+            {
+                if (valor == "")
+                    return false;
+                else
+                {
+                    foreach (string palabra in palabrasProhibidas)
+                    {
+                        if (valor.ToUpper().Contains(palabra))
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo para validar que todos los datos estén rellenos
+        /// </summary>
+        /// <param name="pValores"></param>
+        /// <returns>false si falta alguno</returns>
+        public static bool ValidarCamposVacios(string pValor)
+        {
+            if (pValor == "")
+                return false;
+            else
+            {
+                foreach (string palabra in palabrasProhibidas)
+                {
+                    if (pValor.ToUpper().Contains(palabra))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }

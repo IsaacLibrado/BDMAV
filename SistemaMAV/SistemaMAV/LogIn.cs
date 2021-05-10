@@ -110,7 +110,7 @@ namespace SistemaMAV
             string password = Encriptacion.Encriptar(txbContra.Text);
 
             //si la casilla de user está vacía no se hace la consulta
-            if (user != string.Empty)
+            if (MenuPrincipal.ValidarCamposVacios(txbUsuario.Text))
             {
 
                 //Ejemplo para realizar consulta de varios parametros

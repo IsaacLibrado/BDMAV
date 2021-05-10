@@ -113,7 +113,7 @@ namespace SistemaMAV
         /// </summary>
         private void AnadirUsuario()
         {
-            if (txbEstado.Text!="")
+            if (MenuPrincipal.ValidarCamposVacios(txbEstado.Text))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Anadir_Estado", "@pEstado", txbEstado.Text, SqlDbType.VarChar, MenuPrincipal.cn);
@@ -159,7 +159,7 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.VarChar);
             tipos.Add(SqlDbType.TinyInt);
 
-            if (ValidarCamposVacios(valores))
+            if (MenuPrincipal.ValidarCamposVacios(valores))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Estado", parametros, valores, tipos, MenuPrincipal.cn);
@@ -269,22 +269,6 @@ namespace SistemaMAV
         {
             txbID.Enabled = false;
             txbEstado.Enabled = false;
-        }
-
-        /// <summary>
-        /// Metodo para validar que todos los datos estén rellenos
-        /// </summary>
-        /// <param name="pValores"></param>
-        /// <returns>false si falta alguno</returns>
-        private bool ValidarCamposVacios(List<string> pValores)
-        {
-            foreach (string valor in pValores)
-            {
-                if (valor == "")
-                    return false;
-            }
-
-            return true;
         }
 
         /// <summary>

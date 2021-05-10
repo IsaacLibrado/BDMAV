@@ -111,7 +111,7 @@ namespace SistemaMAV
         /// </summary>
         private void AnadirUsuario()
         {
-            if (txbTipoUsuario.Text != "")
+            if (MenuPrincipal.ValidarCamposVacios(txbTipoUsuario.Text))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Anadir_Tipo_Usuario", "@pTipo_Usuario", txbTipoUsuario.Text, SqlDbType.VarChar, MenuPrincipal.cn);
@@ -158,7 +158,7 @@ namespace SistemaMAV
             tipos.Add(SqlDbType.VarChar);
             
 
-            if (ValidarCamposVacios(valores))
+            if (MenuPrincipal.ValidarCamposVacios(valores))
             {
                 //hacemos la consulta
                 SqlCommand consulta = MenuPrincipal.DefinirConsultaNPar("sp_Editar_Tipo_Usuario", parametros, valores, tipos, MenuPrincipal.cn);
@@ -270,21 +270,6 @@ namespace SistemaMAV
             txbTipoUsuario.Enabled = false;
         }
 
-        /// <summary>
-        /// Metodo para validar que todos los datos estén rellenos
-        /// </summary>
-        /// <param name="pValores"></param>
-        /// <returns>false si falta alguno</returns>
-        private bool ValidarCamposVacios(List<string> pValores)
-        {
-            foreach (string valor in pValores)
-            {
-                if (valor == "")
-                    return false;
-            }
-
-            return true;
-        }
 
         /// <summary>
         /// metodo para realizar la edicion de usuarios
