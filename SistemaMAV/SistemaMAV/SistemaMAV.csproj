@@ -58,6 +58,12 @@
     <Compile Include="ABCMateriales.Designer.cs">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABCTiposSolicitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABCTiposSolicitantes.Designer.cs">
+      <DependentUpon>ABCTiposSolicitantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABCTiposUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,18 @@
     </Compile>
     <Compile Include="ConsultarMateriales.Designer.cs">
       <DependentUpon>ConsultarMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarTiposSolicitante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarTiposSolicitante.Designer.cs">
+      <DependentUpon>ConsultarTiposSolicitante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarTiposUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarTiposUsuario.Designer.cs">
+      <DependentUpon>ConsultarTiposUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarUsuarios.cs">
       <SubType>Form</SubType>
@@ -120,6 +138,9 @@
     <EmbeddedResource Include="ABCMateriales.resx">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABCTiposSolicitantes.resx">
+      <DependentUpon>ABCTiposSolicitantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABCTiposUsuario.resx">
       <DependentUpon>ABCTiposUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarMateriales.resx">
       <DependentUpon>ConsultarMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarTiposSolicitante.resx">
+      <DependentUpon>ConsultarTiposSolicitante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarTiposUsuario.resx">
+      <DependentUpon>ConsultarTiposUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarUsuarios.resx">
       <DependentUpon>ConsultarUsuarios.cs</DependentUpon>

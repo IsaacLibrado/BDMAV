@@ -60,7 +60,7 @@ namespace SistemaMAV
             //hacemos invisibles a los sub menus
             panelAdminSubMenu.Visible = false;
             panelPrestamosSubMenu.Visible = false;
-            panelBecaSubMenu.Visible = false;
+
 
             //Inicializamos textos
             lblMensajes.Text = " ";
@@ -73,7 +73,7 @@ namespace SistemaMAV
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MaximizeBox = false;
 
-            this.FormBorderStyle = FormBorderStyle.None;
+            
         }
 
 
@@ -156,11 +156,9 @@ namespace SistemaMAV
             else if(pCargo=="Becario" || pCargo=="Solicitante")
             {
                 formActual.btnAdmin.Visible = false;
-                formActual.btnSMRegistros.Visible = false;
 
                 if(pCargo=="Solicitante")
                 {
-                    formActual.btnHorasBeca.Visible = false;
                     formActual.btnSMPrestar.Visible = false;
                     formActual.btnSMDevolver.Visible = false;
                     formActual.panelPrestamosSubMenu.Height = 66;
@@ -169,7 +167,6 @@ namespace SistemaMAV
             else if(pCargo=="Visitante")
             {
                 formActual.btnAdmin.Visible = false;
-                formActual.btnHorasBeca.Visible = false;
                 formActual.btnSMPrestar.Visible = false;
                 formActual.btnSMDevolver.Visible = false;
                 formActual.btnSMConsPres.Visible = false;
@@ -177,6 +174,7 @@ namespace SistemaMAV
             }
 
             MenuPrincipal.AsignarTitulo("Inicio");
+            formActual.FormBorderStyle = FormBorderStyle.None;
         }
 
 
@@ -190,7 +188,7 @@ namespace SistemaMAV
         {
             panelAdminSubMenu.Visible = false;
             panelPrestamosSubMenu.Visible = false;
-            panelBecaSubMenu.Visible = false;
+
         }
 
         /// <summary>
@@ -511,19 +509,6 @@ namespace SistemaMAV
             mostrarSubMenu(panelPrestamosSubMenu);
         }
 
-        /// <summary>
-        /// Metodo para mostrar el submenu de becas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// Version 1.0
-        /// Fecha de creacion 08/05/21
-        /// Creador Isaac Librado
-        private void btnHorasBeca_Click(object sender, EventArgs e)
-        {
-            mostrarSubMenu(panelBecaSubMenu);
-        }
-
 
         #endregion
 
@@ -554,6 +539,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Tipos de Solicitantes");
+            abrirPantallas(new ABCTiposSolicitantes());
         }
 
         /// <summary>
@@ -626,7 +612,7 @@ namespace SistemaMAV
         private void btnSMTiposUsuario_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
-            AsignarTitulo("ABC Tipos Usuarios");
+            AsignarTitulo("ABC Tipos de Usuarios");
             abrirPantallas(new ABCTiposUsuario());
         }
 
@@ -686,34 +672,6 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("Devolver Prestamo");
-        }
-
-        /// <summary>
-        /// Evento que se realizar al presionar el boton registrar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// Version 1.0
-        /// Fecha de creacion 07 de Marzo 2021
-        /// Creador Isaac Librado
-        private void btnSMRegistros_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-            AsignarTitulo("Registro de horas");
-        }
-
-        /// <summary>
-        /// Evento que se realizar al presionar el boton consultar registros
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// Version 1.0
-        /// Fecha de creacion 07 de Marzo 2021
-        /// Creador Isaac Librado
-        private void btnSMConsReg_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-            AsignarTitulo("Consulta de registros");
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)

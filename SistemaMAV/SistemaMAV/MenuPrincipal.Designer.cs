@@ -38,10 +38,6 @@ namespace SistemaMAV
             this.lblUserName = new System.Windows.Forms.Label();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.panelSubMenus = new System.Windows.Forms.Panel();
-            this.panelBecaSubMenu = new System.Windows.Forms.Panel();
-            this.btnSMConsReg = new System.Windows.Forms.Button();
-            this.btnSMRegistros = new System.Windows.Forms.Button();
-            this.btnHorasBeca = new System.Windows.Forms.Button();
             this.panelPrestamosSubMenu = new System.Windows.Forms.Panel();
             this.btnSMDevolver = new System.Windows.Forms.Button();
             this.btnSMPrestar = new System.Windows.Forms.Button();
@@ -79,7 +75,6 @@ namespace SistemaMAV
             this.panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.panelSubMenus.SuspendLayout();
-            this.panelBecaSubMenu.SuspendLayout();
             this.panelPrestamosSubMenu.SuspendLayout();
             this.panelAdminSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -177,8 +172,6 @@ namespace SistemaMAV
             // 
             this.panelSubMenus.AutoScroll = true;
             this.panelSubMenus.BackColor = System.Drawing.Color.Black;
-            this.panelSubMenus.Controls.Add(this.panelBecaSubMenu);
-            this.panelSubMenus.Controls.Add(this.btnHorasBeca);
             this.panelSubMenus.Controls.Add(this.panelPrestamosSubMenu);
             this.panelSubMenus.Controls.Add(this.btnPrestamos);
             this.panelSubMenus.Controls.Add(this.panelAdminSubMenu);
@@ -188,67 +181,6 @@ namespace SistemaMAV
             this.panelSubMenus.Name = "panelSubMenus";
             this.panelSubMenus.Size = new System.Drawing.Size(242, 384);
             this.panelSubMenus.TabIndex = 3;
-            // 
-            // panelBecaSubMenu
-            // 
-            this.panelBecaSubMenu.BackColor = System.Drawing.Color.Black;
-            this.panelBecaSubMenu.Controls.Add(this.btnSMConsReg);
-            this.panelBecaSubMenu.Controls.Add(this.btnSMRegistros);
-            this.panelBecaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBecaSubMenu.Location = new System.Drawing.Point(0, 524);
-            this.panelBecaSubMenu.Name = "panelBecaSubMenu";
-            this.panelBecaSubMenu.Size = new System.Drawing.Size(225, 66);
-            this.panelBecaSubMenu.TabIndex = 10;
-            // 
-            // btnSMConsReg
-            // 
-            this.btnSMConsReg.BackColor = System.Drawing.Color.White;
-            this.btnSMConsReg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSMConsReg.FlatAppearance.BorderSize = 0;
-            this.btnSMConsReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMConsReg.ForeColor = System.Drawing.Color.Black;
-            this.btnSMConsReg.Location = new System.Drawing.Point(0, 32);
-            this.btnSMConsReg.Name = "btnSMConsReg";
-            this.btnSMConsReg.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMConsReg.Size = new System.Drawing.Size(225, 32);
-            this.btnSMConsReg.TabIndex = 2;
-            this.btnSMConsReg.Text = "Consultar Registros";
-            this.btnSMConsReg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMConsReg.UseVisualStyleBackColor = false;
-            this.btnSMConsReg.Click += new System.EventHandler(this.btnSMConsReg_Click);
-            // 
-            // btnSMRegistros
-            // 
-            this.btnSMRegistros.BackColor = System.Drawing.Color.White;
-            this.btnSMRegistros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSMRegistros.FlatAppearance.BorderSize = 0;
-            this.btnSMRegistros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMRegistros.ForeColor = System.Drawing.Color.Black;
-            this.btnSMRegistros.Location = new System.Drawing.Point(0, 0);
-            this.btnSMRegistros.Name = "btnSMRegistros";
-            this.btnSMRegistros.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMRegistros.Size = new System.Drawing.Size(225, 32);
-            this.btnSMRegistros.TabIndex = 1;
-            this.btnSMRegistros.Text = "Registrar";
-            this.btnSMRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMRegistros.UseVisualStyleBackColor = false;
-            this.btnSMRegistros.Click += new System.EventHandler(this.btnSMRegistros_Click);
-            // 
-            // btnHorasBeca
-            // 
-            this.btnHorasBeca.BackColor = System.Drawing.Color.Black;
-            this.btnHorasBeca.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHorasBeca.FlatAppearance.BorderSize = 0;
-            this.btnHorasBeca.ForeColor = System.Drawing.Color.White;
-            this.btnHorasBeca.Location = new System.Drawing.Point(0, 479);
-            this.btnHorasBeca.Name = "btnHorasBeca";
-            this.btnHorasBeca.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHorasBeca.Size = new System.Drawing.Size(225, 45);
-            this.btnHorasBeca.TabIndex = 9;
-            this.btnHorasBeca.Text = "Horas Beca";
-            this.btnHorasBeca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorasBeca.UseVisualStyleBackColor = false;
-            this.btnHorasBeca.Click += new System.EventHandler(this.btnHorasBeca_Click);
             // 
             // panelPrestamosSubMenu
             // 
@@ -513,7 +445,7 @@ namespace SistemaMAV
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(225, 45);
             this.btnAdmin.TabIndex = 1;
-            this.btnAdmin.Text = "Administracion";
+            this.btnAdmin.Text = "Maestros";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnVentas_Click);
@@ -613,6 +545,7 @@ namespace SistemaMAV
             // 
             // txbServer
             // 
+            this.txbServer.Enabled = false;
             this.txbServer.Location = new System.Drawing.Point(405, 140);
             this.txbServer.Margin = new System.Windows.Forms.Padding(4);
             this.txbServer.Name = "txbServer";
@@ -729,7 +662,6 @@ namespace SistemaMAV
             this.panelUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             this.panelSubMenus.ResumeLayout(false);
-            this.panelBecaSubMenu.ResumeLayout(false);
             this.panelPrestamosSubMenu.ResumeLayout(false);
             this.panelAdminSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -790,10 +722,6 @@ namespace SistemaMAV
         private System.Windows.Forms.Button btnSMDevolver;
         private System.Windows.Forms.Button btnSMPrestar;
         private System.Windows.Forms.Button btnSMConsPres;
-        private System.Windows.Forms.Button btnHorasBeca;
-        private System.Windows.Forms.Panel panelBecaSubMenu;
-        private System.Windows.Forms.Button btnSMRegistros;
-        private System.Windows.Forms.Button btnSMConsReg;
     }
 }
 
