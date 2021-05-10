@@ -76,7 +76,7 @@ namespace SistemaMAV
         private void txbBusqueda_TextChanged(object sender, EventArgs e)
         {
             ///obtenemos los datos del stored proccedure
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -84,6 +84,17 @@ namespace SistemaMAV
 
             dgVistaTabla.DataSource = dt;
             respuesta.Close();
+        }
+
+        /// <summary>
+        /// Metodo para llevar al usuario a la pantalla de consultas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal.AsignarTitulo("Consultar materiales");
+            MenuPrincipal.abrirPantallas(new ConsultarMateriales());
         }
 
         /// <summary>
@@ -318,7 +329,7 @@ namespace SistemaMAV
         private void CargarTabla()
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -449,6 +460,7 @@ namespace SistemaMAV
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Metodo para validar que todos los datos estén rellenos
         /// </summary>
         /// <param name="pValores"></param>
@@ -462,6 +474,16 @@ namespace SistemaMAV
             }
 
             return true;
+=======
+        /// Metodo para llevar al usuario a la pantalla de consultas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal.AsignarTitulo("Consultar materiales");
+            MenuPrincipal.abrirPantallas(new ConsultarMateriales());
+>>>>>>> 34c21ead6b28d544a33b79c52290ebd516b5b8b1
         }
     }
 }

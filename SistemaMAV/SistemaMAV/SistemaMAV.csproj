@@ -58,6 +58,12 @@
     <Compile Include="ABCUsuarios.Designer.cs">
       <DependentUpon>ABCUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarMateriales.Designer.cs">
+      <DependentUpon>ConsultarMateriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABCUsuarios.resx">
       <DependentUpon>ABCUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarMateriales.resx">
+      <DependentUpon>ConsultarMateriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarUsuarios.resx">
       <DependentUpon>ConsultarUsuarios.cs</DependentUpon>
