@@ -146,8 +146,7 @@ namespace SistemaMAV
                 formActual.btnSMUsuarios.Visible = false;
                 formActual.btnSMTiposUsuario.Visible = false;
                 formActual.btnSMEstados.Visible = false;
-                //formActual.btnSMTiposSolicitante.Visible = false;
-                formActual.panelAdminSubMenu.Height = 129;
+                formActual.panelAdminSubMenu.Height = 66;
 
                 formActual.btnSMPrestar.Visible = false;
                 formActual.btnSMDevolver.Visible = false;
@@ -570,7 +569,6 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Marcas");
-            MenuPrincipal.abrirPantallas(new ABCMarcas());
         }
 
         /// <summary>
