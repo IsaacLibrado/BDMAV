@@ -481,6 +481,7 @@ namespace SistemaMAV
             //Ocultamos el submenu y mostramos la pantalla con su respectivo titulo
             ocultarSubMenu();
             AsignarTitulo("ABC Becarios");
+            abrirPantallas(new ABCBecarios());
         }
 
         /// <summary>

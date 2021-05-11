@@ -50,9 +50,6 @@ namespace SistemaMAV
             this.btnSMMateriales = new System.Windows.Forms.Button();
             this.btnSMMarcas = new System.Windows.Forms.Button();
             this.btnSMEstados = new System.Windows.Forms.Button();
-            this.btnSMTiposSolicitante = new System.Windows.Forms.Button();
-            this.btnSMSolicitantes = new System.Windows.Forms.Button();
-            this.btnSMBecarios = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -190,9 +187,9 @@ namespace SistemaMAV
             this.panelPrestamosSubMenu.Controls.Add(this.btnSMConsPres);
             this.panelPrestamosSubMenu.Controls.Add(this.btnSMConsMat);
             this.panelPrestamosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPrestamosSubMenu.Location = new System.Drawing.Point(0, 343);
+            this.panelPrestamosSubMenu.Location = new System.Drawing.Point(0, 247);
             this.panelPrestamosSubMenu.Name = "panelPrestamosSubMenu";
-            this.panelPrestamosSubMenu.Size = new System.Drawing.Size(225, 136);
+            this.panelPrestamosSubMenu.Size = new System.Drawing.Size(242, 136);
             this.panelPrestamosSubMenu.TabIndex = 8;
             // 
             // btnSMDevolver
@@ -205,7 +202,7 @@ namespace SistemaMAV
             this.btnSMDevolver.Location = new System.Drawing.Point(0, 96);
             this.btnSMDevolver.Name = "btnSMDevolver";
             this.btnSMDevolver.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMDevolver.Size = new System.Drawing.Size(225, 32);
+            this.btnSMDevolver.Size = new System.Drawing.Size(242, 32);
             this.btnSMDevolver.TabIndex = 3;
             this.btnSMDevolver.Text = "Devolver Prestamo";
             this.btnSMDevolver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,7 +219,7 @@ namespace SistemaMAV
             this.btnSMPrestar.Location = new System.Drawing.Point(0, 64);
             this.btnSMPrestar.Name = "btnSMPrestar";
             this.btnSMPrestar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMPrestar.Size = new System.Drawing.Size(225, 32);
+            this.btnSMPrestar.Size = new System.Drawing.Size(242, 32);
             this.btnSMPrestar.TabIndex = 2;
             this.btnSMPrestar.Text = "Realizar Prestamo";
             this.btnSMPrestar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,7 +236,7 @@ namespace SistemaMAV
             this.btnSMConsPres.Location = new System.Drawing.Point(0, 32);
             this.btnSMConsPres.Name = "btnSMConsPres";
             this.btnSMConsPres.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMConsPres.Size = new System.Drawing.Size(225, 32);
+            this.btnSMConsPres.Size = new System.Drawing.Size(242, 32);
             this.btnSMConsPres.TabIndex = 1;
             this.btnSMConsPres.Text = "Consultar Prestamos";
             this.btnSMConsPres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,7 +253,7 @@ namespace SistemaMAV
             this.btnSMConsMat.Location = new System.Drawing.Point(0, 0);
             this.btnSMConsMat.Name = "btnSMConsMat";
             this.btnSMConsMat.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMConsMat.Size = new System.Drawing.Size(225, 32);
+            this.btnSMConsMat.Size = new System.Drawing.Size(242, 32);
             this.btnSMConsMat.TabIndex = 0;
             this.btnSMConsMat.Text = "Consultar Materiales";
             this.btnSMConsMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,10 +266,10 @@ namespace SistemaMAV
             this.btnPrestamos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPrestamos.FlatAppearance.BorderSize = 0;
             this.btnPrestamos.ForeColor = System.Drawing.Color.White;
-            this.btnPrestamos.Location = new System.Drawing.Point(0, 298);
+            this.btnPrestamos.Location = new System.Drawing.Point(0, 202);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPrestamos.Size = new System.Drawing.Size(225, 45);
+            this.btnPrestamos.Size = new System.Drawing.Size(242, 45);
             this.btnPrestamos.TabIndex = 7;
             this.btnPrestamos.Text = "Prestamos";
             this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,13 +284,10 @@ namespace SistemaMAV
             this.panelAdminSubMenu.Controls.Add(this.btnSMMateriales);
             this.panelAdminSubMenu.Controls.Add(this.btnSMMarcas);
             this.panelAdminSubMenu.Controls.Add(this.btnSMEstados);
-            this.panelAdminSubMenu.Controls.Add(this.btnSMTiposSolicitante);
-            this.panelAdminSubMenu.Controls.Add(this.btnSMSolicitantes);
-            this.panelAdminSubMenu.Controls.Add(this.btnSMBecarios);
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 45);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
-            this.panelAdminSubMenu.Size = new System.Drawing.Size(225, 253);
+            this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 157);
             this.panelAdminSubMenu.TabIndex = 2;
             // 
             // btnSMTiposUsuario
@@ -303,10 +297,10 @@ namespace SistemaMAV
             this.btnSMTiposUsuario.FlatAppearance.BorderSize = 0;
             this.btnSMTiposUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSMTiposUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnSMTiposUsuario.Location = new System.Drawing.Point(0, 224);
+            this.btnSMTiposUsuario.Location = new System.Drawing.Point(0, 128);
             this.btnSMTiposUsuario.Name = "btnSMTiposUsuario";
             this.btnSMTiposUsuario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMTiposUsuario.Size = new System.Drawing.Size(225, 32);
+            this.btnSMTiposUsuario.Size = new System.Drawing.Size(242, 32);
             this.btnSMTiposUsuario.TabIndex = 7;
             this.btnSMTiposUsuario.Text = "Tipos de Usuarios";
             this.btnSMTiposUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,10 +314,10 @@ namespace SistemaMAV
             this.btnSMUsuarios.FlatAppearance.BorderSize = 0;
             this.btnSMUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSMUsuarios.ForeColor = System.Drawing.Color.Black;
-            this.btnSMUsuarios.Location = new System.Drawing.Point(0, 192);
+            this.btnSMUsuarios.Location = new System.Drawing.Point(0, 96);
             this.btnSMUsuarios.Name = "btnSMUsuarios";
             this.btnSMUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMUsuarios.Size = new System.Drawing.Size(225, 32);
+            this.btnSMUsuarios.Size = new System.Drawing.Size(242, 32);
             this.btnSMUsuarios.TabIndex = 6;
             this.btnSMUsuarios.Text = "Usuarios";
             this.btnSMUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,10 +331,10 @@ namespace SistemaMAV
             this.btnSMMateriales.FlatAppearance.BorderSize = 0;
             this.btnSMMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSMMateriales.ForeColor = System.Drawing.Color.Black;
-            this.btnSMMateriales.Location = new System.Drawing.Point(0, 160);
+            this.btnSMMateriales.Location = new System.Drawing.Point(0, 64);
             this.btnSMMateriales.Name = "btnSMMateriales";
             this.btnSMMateriales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMMateriales.Size = new System.Drawing.Size(225, 32);
+            this.btnSMMateriales.Size = new System.Drawing.Size(242, 32);
             this.btnSMMateriales.TabIndex = 5;
             this.btnSMMateriales.Text = "Materiales";
             this.btnSMMateriales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -354,10 +348,10 @@ namespace SistemaMAV
             this.btnSMMarcas.FlatAppearance.BorderSize = 0;
             this.btnSMMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSMMarcas.ForeColor = System.Drawing.Color.Black;
-            this.btnSMMarcas.Location = new System.Drawing.Point(0, 128);
+            this.btnSMMarcas.Location = new System.Drawing.Point(0, 32);
             this.btnSMMarcas.Name = "btnSMMarcas";
             this.btnSMMarcas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMMarcas.Size = new System.Drawing.Size(225, 32);
+            this.btnSMMarcas.Size = new System.Drawing.Size(242, 32);
             this.btnSMMarcas.TabIndex = 4;
             this.btnSMMarcas.Text = "Marcas";
             this.btnSMMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,66 +365,15 @@ namespace SistemaMAV
             this.btnSMEstados.FlatAppearance.BorderSize = 0;
             this.btnSMEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSMEstados.ForeColor = System.Drawing.Color.Black;
-            this.btnSMEstados.Location = new System.Drawing.Point(0, 96);
+            this.btnSMEstados.Location = new System.Drawing.Point(0, 0);
             this.btnSMEstados.Name = "btnSMEstados";
             this.btnSMEstados.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMEstados.Size = new System.Drawing.Size(225, 32);
+            this.btnSMEstados.Size = new System.Drawing.Size(242, 32);
             this.btnSMEstados.TabIndex = 3;
             this.btnSMEstados.Text = "Estados";
             this.btnSMEstados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSMEstados.UseVisualStyleBackColor = false;
             this.btnSMEstados.Click += new System.EventHandler(this.btnSMEstados_Click);
-            // 
-            // btnSMTiposSolicitante
-            // 
-            this.btnSMTiposSolicitante.BackColor = System.Drawing.Color.White;
-            this.btnSMTiposSolicitante.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSMTiposSolicitante.FlatAppearance.BorderSize = 0;
-            this.btnSMTiposSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMTiposSolicitante.ForeColor = System.Drawing.Color.Black;
-            this.btnSMTiposSolicitante.Location = new System.Drawing.Point(0, 64);
-            this.btnSMTiposSolicitante.Name = "btnSMTiposSolicitante";
-            this.btnSMTiposSolicitante.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMTiposSolicitante.Size = new System.Drawing.Size(225, 32);
-            this.btnSMTiposSolicitante.TabIndex = 2;
-            this.btnSMTiposSolicitante.Text = "Tipos de Solicitantes";
-            this.btnSMTiposSolicitante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMTiposSolicitante.UseVisualStyleBackColor = false;
-            this.btnSMTiposSolicitante.Click += new System.EventHandler(this.btnSMTiposSolicitante_Click);
-            // 
-            // btnSMSolicitantes
-            // 
-            this.btnSMSolicitantes.BackColor = System.Drawing.Color.White;
-            this.btnSMSolicitantes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSMSolicitantes.FlatAppearance.BorderSize = 0;
-            this.btnSMSolicitantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMSolicitantes.ForeColor = System.Drawing.Color.Black;
-            this.btnSMSolicitantes.Location = new System.Drawing.Point(0, 32);
-            this.btnSMSolicitantes.Name = "btnSMSolicitantes";
-            this.btnSMSolicitantes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMSolicitantes.Size = new System.Drawing.Size(225, 32);
-            this.btnSMSolicitantes.TabIndex = 1;
-            this.btnSMSolicitantes.Text = "Solicitantes";
-            this.btnSMSolicitantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMSolicitantes.UseVisualStyleBackColor = false;
-            this.btnSMSolicitantes.Click += new System.EventHandler(this.btnSMSolicitantes_Click);
-            // 
-            // btnSMBecarios
-            // 
-            this.btnSMBecarios.BackColor = System.Drawing.Color.White;
-            this.btnSMBecarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSMBecarios.FlatAppearance.BorderSize = 0;
-            this.btnSMBecarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMBecarios.ForeColor = System.Drawing.Color.Black;
-            this.btnSMBecarios.Location = new System.Drawing.Point(0, 0);
-            this.btnSMBecarios.Name = "btnSMBecarios";
-            this.btnSMBecarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSMBecarios.Size = new System.Drawing.Size(225, 32);
-            this.btnSMBecarios.TabIndex = 0;
-            this.btnSMBecarios.Text = "Becarios";
-            this.btnSMBecarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMBecarios.UseVisualStyleBackColor = false;
-            this.btnSMBecarios.Click += new System.EventHandler(this.btnSMBecarios_Click);
             // 
             // btnAdmin
             // 
@@ -443,7 +386,7 @@ namespace SistemaMAV
             this.btnAdmin.Location = new System.Drawing.Point(0, 0);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(225, 45);
+            this.btnAdmin.Size = new System.Drawing.Size(242, 45);
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "Maestros";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -684,9 +627,6 @@ namespace SistemaMAV
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelAdminSubMenu;
         private System.Windows.Forms.Button btnSMEstados;
-        private System.Windows.Forms.Button btnSMTiposSolicitante;
-        private System.Windows.Forms.Button btnSMSolicitantes;
-        private System.Windows.Forms.Button btnSMBecarios;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelDatos;

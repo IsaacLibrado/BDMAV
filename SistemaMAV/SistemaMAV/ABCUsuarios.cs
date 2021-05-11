@@ -401,7 +401,6 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MenuPrincipal formActual = (MenuPrincipal)ActiveForm;
 
             if (txbNombre.Text == MenuPrincipal.usuarioActual)
             {

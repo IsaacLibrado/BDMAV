@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABCBecarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABCBecarios.Designer.cs">
+      <DependentUpon>ABCBecarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABCEstados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="RealizarPrestamo.Designer.cs">
       <DependentUpon>RealizarPrestamo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ABCBecarios.resx">
+      <DependentUpon>ABCBecarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABCEstados.resx">
       <DependentUpon>ABCEstados.cs</DependentUpon>
     </EmbeddedResource>

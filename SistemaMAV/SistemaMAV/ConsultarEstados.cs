@@ -14,7 +14,6 @@ namespace SistemaMAV
     public partial class ConsultarEstados : Form
     {
         DataTable dt;
-        int prueba = 0;
         public ConsultarEstados()
         {
             InitializeComponent();

@@ -18,11 +18,12 @@ namespace SistemaMAV
     {   
         //data tables para la info
         DataTable dt;
-        DataTable indtu;
         int tipoOp; //0.Nada 1.Alta 2.Cambio
         public ABCTiposSolicitantes()
         {
+            tipoOp = 0;
             InitializeComponent();
+            dt = new DataTable();
         }
         /// <summary>
         /// Metodo para cargar los datos al inicio

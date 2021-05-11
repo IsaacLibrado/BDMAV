@@ -48,6 +48,14 @@ namespace SistemaMAV
 
             //cerramos el reader
             respuesta.Close();
+
+            if (MenuPrincipal.cargoActual == "Visitante" || MenuPrincipal.cargoActual == "Solicitante")
+            {
+                dgVistaTabla.Columns[0].Visible = false;
+                dgVistaTabla.Columns[2].Visible = false;
+                dgVistaTabla.Columns[4].Visible = false;
+                dgVistaTabla.Columns[5].Visible = false;
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -72,6 +80,14 @@ namespace SistemaMAV
 
             //cerramos el reader
             respuesta.Close();
+
+            if (MenuPrincipal.cargoActual == "Visitante" || MenuPrincipal.cargoActual == "Solicitante")
+            {
+                dgVistaTabla.Columns[0].Visible = false;
+                dgVistaTabla.Columns[2].Visible = false;
+                dgVistaTabla.Columns[4].Visible = false;
+                dgVistaTabla.Columns[5].Visible = false;
+            }
         }
     }
 }

@@ -14,7 +14,6 @@ namespace SistemaMAV
     public partial class ConsultarTiposUsuario : Form
     {
         DataTable dt;
-        int prueba = 0;
         public ConsultarTiposUsuario()
         {
             InitializeComponent();

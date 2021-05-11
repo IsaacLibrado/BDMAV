@@ -18,7 +18,7 @@ namespace SistemaMAV
     {
         //data tables para la info
         DataTable dt;
-        DataTable indtu;
+
         int tipoOp; //0.Nada 1.Alta 2.Cambio
 
         /// <summary>
