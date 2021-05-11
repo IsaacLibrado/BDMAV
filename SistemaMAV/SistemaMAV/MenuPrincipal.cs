@@ -569,6 +569,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("ABC Marcas");
+            MenuPrincipal.abrirPantallas(new ABCMarcas());
         }
 
         /// <summary>
