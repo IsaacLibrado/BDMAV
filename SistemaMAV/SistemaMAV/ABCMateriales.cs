@@ -457,6 +457,5 @@ namespace SistemaMAV
             txbModelo.Text = "";
             txbNumSerie.Text = "";
         }
-
     }
 }

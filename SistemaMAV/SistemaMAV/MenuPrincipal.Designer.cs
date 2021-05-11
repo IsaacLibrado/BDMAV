@@ -488,7 +488,6 @@ namespace SistemaMAV
             // 
             // txbServer
             // 
-            this.txbServer.Enabled = false;
             this.txbServer.Location = new System.Drawing.Point(405, 140);
             this.txbServer.Margin = new System.Windows.Forms.Padding(4);
             this.txbServer.Name = "txbServer";
