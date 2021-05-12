@@ -48,10 +48,9 @@
             this.btnDelete.BackgroundImage = global::SistemaMAV.Properties.Resources.Delete;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(627, 372);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(187, 175);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(52, 43);
+            this.btnDelete.Size = new System.Drawing.Size(39, 35);
             this.btnDelete.TabIndex = 32;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -61,10 +60,9 @@
             this.btnEdit.BackgroundImage = global::SistemaMAV.Properties.Resources.Notebook;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(567, 372);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(113, 175);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(52, 43);
+            this.btnEdit.Size = new System.Drawing.Size(39, 35);
             this.btnEdit.TabIndex = 31;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -74,10 +72,9 @@
             this.btnAdd.BackgroundImage = global::SistemaMAV.Properties.Resources.add;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(507, 372);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(38, 175);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(52, 43);
+            this.btnAdd.Size = new System.Drawing.Size(39, 35);
             this.btnAdd.TabIndex = 30;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -87,21 +84,19 @@
             this.btnGuardar.BackgroundImage = global::SistemaMAV.Properties.Resources.Done1;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(249, 151);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(187, 123);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(52, 43);
+            this.btnGuardar.Size = new System.Drawing.Size(39, 35);
             this.btnGuardar.TabIndex = 29;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txbBusqueda
             // 
-            this.txbBusqueda.Location = new System.Drawing.Point(545, 27);
-            this.txbBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBusqueda.Location = new System.Drawing.Point(363, 22);
             this.txbBusqueda.MaxLength = 153;
             this.txbBusqueda.Name = "txbBusqueda";
-            this.txbBusqueda.Size = new System.Drawing.Size(132, 22);
+            this.txbBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txbBusqueda.TabIndex = 28;
             this.txbBusqueda.TextChanged += new System.EventHandler(this.txbBusqueda_TextChanged);
             // 
@@ -110,8 +105,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(47, 65);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(35, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 16);
             this.label7.TabIndex = 27;
@@ -120,11 +114,10 @@
             // txbID
             // 
             this.txbID.Enabled = false;
-            this.txbID.Location = new System.Drawing.Point(169, 64);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4);
+            this.txbID.Location = new System.Drawing.Point(127, 52);
             this.txbID.MaxLength = 8;
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(132, 22);
+            this.txbID.Size = new System.Drawing.Size(100, 20);
             this.txbID.TabIndex = 26;
             // 
             // lblMarca
@@ -132,8 +125,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMarca.Location = new System.Drawing.Point(47, 109);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Location = new System.Drawing.Point(35, 89);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(46, 16);
             this.lblMarca.TabIndex = 24;
@@ -141,23 +133,22 @@
             // 
             // dgVistaTabla
             // 
+            this.dgVistaTabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVistaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVistaTabla.Location = new System.Drawing.Point(336, 59);
-            this.dgVistaTabla.Margin = new System.Windows.Forms.Padding(4);
+            this.dgVistaTabla.Location = new System.Drawing.Point(352, 48);
             this.dgVistaTabla.Name = "dgVistaTabla";
             this.dgVistaTabla.ReadOnly = true;
-            this.dgVistaTabla.Size = new System.Drawing.Size(343, 300);
+            this.dgVistaTabla.Size = new System.Drawing.Size(157, 277);
             this.dgVistaTabla.TabIndex = 23;
             this.dgVistaTabla.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgVistaTabla_CellMouseClick);
             // 
             // txbNombreMarca
             // 
             this.txbNombreMarca.Enabled = false;
-            this.txbNombreMarca.Location = new System.Drawing.Point(169, 109);
-            this.txbNombreMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNombreMarca.Location = new System.Drawing.Point(127, 89);
             this.txbNombreMarca.MaxLength = 50;
             this.txbNombreMarca.Name = "txbNombreMarca";
-            this.txbNombreMarca.Size = new System.Drawing.Size(132, 22);
+            this.txbNombreMarca.Size = new System.Drawing.Size(100, 20);
             this.txbNombreMarca.TabIndex = 33;
             // 
             // label2
@@ -165,32 +156,31 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(480, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(360, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 34;
             this.label2.Text = "Nombre";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnConsulta
             // 
             this.btnConsulta.BackgroundImage = global::SistemaMAV.Properties.Resources.Searching;
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Location = new System.Drawing.Point(336, 8);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsulta.Location = new System.Drawing.Point(315, 7);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(52, 43);
+            this.btnConsulta.Size = new System.Drawing.Size(39, 35);
             this.btnConsulta.TabIndex = 46;
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // ABCMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(695, 426);
+            this.ClientSize = new System.Drawing.Size(521, 346);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbNombreMarca);
@@ -204,7 +194,6 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.dgVistaTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ABCMarcas";
             this.Text = "ABCMarcas";
             this.Load += new System.EventHandler(this.ABCMarcas_Load);

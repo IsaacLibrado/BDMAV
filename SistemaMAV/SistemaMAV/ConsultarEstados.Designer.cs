@@ -38,16 +38,17 @@ namespace SistemaMAV
             // 
             // dgVistaTabla
             // 
+            this.dgVistaTabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVistaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVistaTabla.Location = new System.Drawing.Point(12, 45);
+            this.dgVistaTabla.Location = new System.Drawing.Point(139, 73);
             this.dgVistaTabla.Name = "dgVistaTabla";
             this.dgVistaTabla.ReadOnly = true;
-            this.dgVistaTabla.Size = new System.Drawing.Size(497, 289);
+            this.dgVistaTabla.Size = new System.Drawing.Size(234, 212);
             this.dgVistaTabla.TabIndex = 0;
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(93, 19);
+            this.txbNombre.Location = new System.Drawing.Point(139, 47);
             this.txbNombre.MaxLength = 153;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(100, 20);
@@ -58,7 +59,7 @@ namespace SistemaMAV
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(90, 3);
+            this.label2.Location = new System.Drawing.Point(138, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 22;
@@ -68,7 +69,7 @@ namespace SistemaMAV
             // 
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegresar.Location = new System.Drawing.Point(12, 16);
+            this.btnRegresar.Location = new System.Drawing.Point(12, 311);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 23);
             this.btnRegresar.TabIndex = 27;

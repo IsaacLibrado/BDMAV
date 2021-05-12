@@ -58,23 +58,22 @@ namespace SistemaMAV
             // 
             // dgVistaTabla
             // 
+            this.dgVistaTabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVistaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVistaTabla.Location = new System.Drawing.Point(336, 55);
-            this.dgVistaTabla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVistaTabla.Location = new System.Drawing.Point(252, 45);
             this.dgVistaTabla.Name = "dgVistaTabla";
             this.dgVistaTabla.ReadOnly = true;
-            this.dgVistaTabla.Size = new System.Drawing.Size(343, 300);
+            this.dgVistaTabla.Size = new System.Drawing.Size(257, 244);
             this.dgVistaTabla.TabIndex = 0;
             this.dgVistaTabla.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgVistaTabla_CellMouseClick);
             // 
             // txbNombre
             // 
             this.txbNombre.Enabled = false;
-            this.txbNombre.Location = new System.Drawing.Point(168, 79);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Location = new System.Drawing.Point(126, 64);
             this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(132, 22);
+            this.txbNombre.Size = new System.Drawing.Size(100, 20);
             this.txbNombre.TabIndex = 1;
             // 
             // lblNombre
@@ -82,8 +81,7 @@ namespace SistemaMAV
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombre.Location = new System.Drawing.Point(43, 79);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(32, 64);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(57, 16);
             this.lblNombre.TabIndex = 2;
@@ -94,8 +92,7 @@ namespace SistemaMAV
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(16, 129);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 4;
@@ -104,11 +101,10 @@ namespace SistemaMAV
             // txbApPat
             // 
             this.txbApPat.Enabled = false;
-            this.txbApPat.Location = new System.Drawing.Point(168, 128);
-            this.txbApPat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbApPat.Location = new System.Drawing.Point(126, 104);
             this.txbApPat.MaxLength = 50;
             this.txbApPat.Name = "txbApPat";
-            this.txbApPat.Size = new System.Drawing.Size(132, 22);
+            this.txbApPat.Size = new System.Drawing.Size(100, 20);
             this.txbApPat.TabIndex = 3;
             // 
             // label2
@@ -116,8 +112,7 @@ namespace SistemaMAV
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(16, 180);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 6;
@@ -126,11 +121,10 @@ namespace SistemaMAV
             // txbApMat
             // 
             this.txbApMat.Enabled = false;
-            this.txbApMat.Location = new System.Drawing.Point(168, 178);
-            this.txbApMat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbApMat.Location = new System.Drawing.Point(126, 145);
             this.txbApMat.MaxLength = 50;
             this.txbApMat.Name = "txbApMat";
-            this.txbApMat.Size = new System.Drawing.Size(132, 22);
+            this.txbApMat.Size = new System.Drawing.Size(100, 20);
             this.txbApMat.TabIndex = 5;
             // 
             // label3
@@ -138,8 +132,7 @@ namespace SistemaMAV
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(63, 234);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(47, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 8;
@@ -148,11 +141,10 @@ namespace SistemaMAV
             // txbEmail
             // 
             this.txbEmail.Enabled = false;
-            this.txbEmail.Location = new System.Drawing.Point(168, 233);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbEmail.Location = new System.Drawing.Point(126, 189);
             this.txbEmail.MaxLength = 180;
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(132, 22);
+            this.txbEmail.Size = new System.Drawing.Size(100, 20);
             this.txbEmail.TabIndex = 7;
             // 
             // label4
@@ -160,8 +152,7 @@ namespace SistemaMAV
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(43, 286);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(32, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 10;
@@ -170,11 +161,10 @@ namespace SistemaMAV
             // txbTelefono
             // 
             this.txbTelefono.Enabled = false;
-            this.txbTelefono.Location = new System.Drawing.Point(168, 284);
-            this.txbTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbTelefono.Location = new System.Drawing.Point(126, 231);
             this.txbTelefono.MaxLength = 10;
             this.txbTelefono.Name = "txbTelefono";
-            this.txbTelefono.Size = new System.Drawing.Size(132, 22);
+            this.txbTelefono.Size = new System.Drawing.Size(100, 20);
             this.txbTelefono.TabIndex = 9;
             this.txbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
@@ -183,8 +173,7 @@ namespace SistemaMAV
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(43, 378);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(32, 307);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 16);
             this.label5.TabIndex = 12;
@@ -193,11 +182,10 @@ namespace SistemaMAV
             // txbContra
             // 
             this.txbContra.Enabled = false;
-            this.txbContra.Location = new System.Drawing.Point(168, 373);
-            this.txbContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbContra.Location = new System.Drawing.Point(126, 303);
             this.txbContra.MaxLength = 25;
             this.txbContra.Name = "txbContra";
-            this.txbContra.Size = new System.Drawing.Size(132, 22);
+            this.txbContra.Size = new System.Drawing.Size(100, 20);
             this.txbContra.TabIndex = 11;
             // 
             // label6
@@ -205,8 +193,7 @@ namespace SistemaMAV
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(16, 331);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 16);
             this.label6.TabIndex = 13;
@@ -217,20 +204,18 @@ namespace SistemaMAV
             this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.Enabled = false;
             this.cmbTipoUsuario.FormattingEnabled = true;
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(168, 330);
-            this.cmbTipoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(126, 268);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
-            this.cmbTipoUsuario.Size = new System.Drawing.Size(132, 24);
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(100, 21);
             this.cmbTipoUsuario.TabIndex = 14;
             // 
             // txbMatricula
             // 
             this.txbMatricula.Enabled = false;
-            this.txbMatricula.Location = new System.Drawing.Point(168, 32);
-            this.txbMatricula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbMatricula.Location = new System.Drawing.Point(126, 26);
             this.txbMatricula.MaxLength = 8;
             this.txbMatricula.Name = "txbMatricula";
-            this.txbMatricula.Size = new System.Drawing.Size(132, 22);
+            this.txbMatricula.Size = new System.Drawing.Size(100, 20);
             this.txbMatricula.TabIndex = 15;
             this.txbMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros);
             // 
@@ -239,8 +224,7 @@ namespace SistemaMAV
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(43, 32);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(32, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 16);
             this.label7.TabIndex = 16;
@@ -248,11 +232,10 @@ namespace SistemaMAV
             // 
             // txbBusqueda
             // 
-            this.txbBusqueda.Location = new System.Drawing.Point(545, 23);
-            this.txbBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbBusqueda.Location = new System.Drawing.Point(409, 19);
             this.txbBusqueda.MaxLength = 153;
             this.txbBusqueda.Name = "txbBusqueda";
-            this.txbBusqueda.Size = new System.Drawing.Size(132, 22);
+            this.txbBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txbBusqueda.TabIndex = 17;
             this.txbBusqueda.TextChanged += new System.EventHandler(this.txbBusqueda_TextChanged);
             // 
@@ -261,10 +244,9 @@ namespace SistemaMAV
             this.btnConsulta.BackgroundImage = global::SistemaMAV.Properties.Resources.Searching;
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Location = new System.Drawing.Point(336, 9);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsulta.Location = new System.Drawing.Point(252, 7);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(52, 43);
+            this.btnConsulta.Size = new System.Drawing.Size(39, 35);
             this.btnConsulta.TabIndex = 22;
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
@@ -274,10 +256,9 @@ namespace SistemaMAV
             this.btnDelete.BackgroundImage = global::SistemaMAV.Properties.Resources.Delete;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(627, 368);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(470, 299);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(52, 43);
+            this.btnDelete.Size = new System.Drawing.Size(39, 35);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -287,10 +268,9 @@ namespace SistemaMAV
             this.btnEdit.BackgroundImage = global::SistemaMAV.Properties.Resources.Notebook;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(567, 368);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Location = new System.Drawing.Point(425, 299);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(52, 43);
+            this.btnEdit.Size = new System.Drawing.Size(39, 35);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -300,10 +280,9 @@ namespace SistemaMAV
             this.btnAdd.BackgroundImage = global::SistemaMAV.Properties.Resources.add;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(507, 368);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(380, 299);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(52, 43);
+            this.btnAdd.Size = new System.Drawing.Size(39, 35);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -313,10 +292,9 @@ namespace SistemaMAV
             this.btnGuardar.BackgroundImage = global::SistemaMAV.Properties.Resources.Done1;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(336, 368);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(252, 299);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(52, 43);
+            this.btnGuardar.Size = new System.Drawing.Size(39, 35);
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -326,8 +304,7 @@ namespace SistemaMAV
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(480, 26);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(360, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 16);
             this.label8.TabIndex = 26;
@@ -335,10 +312,10 @@ namespace SistemaMAV
             // 
             // ABCUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(695, 426);
+            this.ClientSize = new System.Drawing.Size(521, 346);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.btnDelete);
@@ -364,7 +341,6 @@ namespace SistemaMAV
             this.Controls.Add(this.txbNombre);
             this.Controls.Add(this.dgVistaTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ABCUsuarios";
             this.Text = "ABCUsuarios";
             this.Load += new System.EventHandler(this.ABCUsuarios_Load);

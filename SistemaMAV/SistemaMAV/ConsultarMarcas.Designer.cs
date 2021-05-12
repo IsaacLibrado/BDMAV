@@ -38,21 +38,20 @@ namespace SistemaMAV
             // 
             // dgVistaTabla
             // 
+            this.dgVistaTabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVistaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVistaTabla.Location = new System.Drawing.Point(16, 55);
-            this.dgVistaTabla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVistaTabla.Location = new System.Drawing.Point(146, 69);
             this.dgVistaTabla.Name = "dgVistaTabla";
             this.dgVistaTabla.ReadOnly = true;
-            this.dgVistaTabla.Size = new System.Drawing.Size(663, 356);
+            this.dgVistaTabla.Size = new System.Drawing.Size(234, 199);
             this.dgVistaTabla.TabIndex = 0;
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(124, 23);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Location = new System.Drawing.Point(146, 43);
             this.txbNombre.MaxLength = 153;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(132, 22);
+            this.txbNombre.Size = new System.Drawing.Size(100, 20);
             this.txbNombre.TabIndex = 17;
             this.txbNombre.TextChanged += new System.EventHandler(this.ConsultarTabla);
             // 
@@ -60,10 +59,9 @@ namespace SistemaMAV
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(120, 4);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(143, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Marca";
             // 
@@ -71,10 +69,9 @@ namespace SistemaMAV
             // 
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegresar.Location = new System.Drawing.Point(16, 20);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresar.Location = new System.Drawing.Point(12, 311);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
             this.btnRegresar.TabIndex = 27;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -82,16 +79,15 @@ namespace SistemaMAV
             // 
             // ConsultarMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(695, 426);
+            this.ClientSize = new System.Drawing.Size(521, 346);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbNombre);
             this.Controls.Add(this.dgVistaTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConsultarMarcas";
             this.Text = "ABCUsuarios";
             this.Load += new System.EventHandler(this.ConsultarUsuarios_Load);

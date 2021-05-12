@@ -68,6 +68,7 @@
             // 
             // dgVistaTabla
             // 
+            this.dgVistaTabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVistaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVistaTabla.Location = new System.Drawing.Point(12, 45);
             this.dgVistaTabla.Name = "dgVistaTabla";

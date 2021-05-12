@@ -297,5 +297,10 @@ namespace SistemaMAV
             MenuPrincipal.AsignarTitulo("Consultar Marcas");
             MenuPrincipal.abrirPantallas(new ConsultarMarcas());
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
