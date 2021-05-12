@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaMAV
@@ -21,7 +15,7 @@ namespace SistemaMAV
 
             string cargo = MenuPrincipal.cargoActual;
 
-            if(cargo!="Administrador" && cargo!="Jefe")
+            if (cargo != "Administrador" && cargo != "Jefe")
             {
                 btnRegresar.Visible = false;
             }
@@ -36,7 +30,7 @@ namespace SistemaMAV
         private void CargarTabla()
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Disponible_Por_Nombre", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", "", SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -68,7 +62,7 @@ namespace SistemaMAV
         private void ConsultarTabla(object sender, EventArgs e)
         {
             //hacemos la consulta por nombre 
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Disponible_Por_Nombre", "@pNombre", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre", "@pNombre", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 

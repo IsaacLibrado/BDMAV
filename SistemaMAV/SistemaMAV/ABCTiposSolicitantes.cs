@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaMAV
@@ -15,7 +10,7 @@ namespace SistemaMAV
     /// Clase que define a la pantalla de solicitantes
     /// </summary>
     public partial class ABCTiposSolicitantes : Form
-    {   
+    {
         //data tables para la info
         DataTable dt;
         int tipoOp; //0.Nada 1.Alta 2.Cambio

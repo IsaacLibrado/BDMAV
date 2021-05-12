@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaMAV
@@ -152,12 +147,12 @@ namespace SistemaMAV
             List<string> valores = new List<string>();
             valores.Add(txbID.Text);
             valores.Add(txbTipoUsuario.Text);
-            
+
             //definimos los tipos de los parametros
             List<SqlDbType> tipos = new List<SqlDbType>();
             tipos.Add(SqlDbType.TinyInt);
             tipos.Add(SqlDbType.VarChar);
-            
+
 
             if (MenuPrincipal.ValidarCamposVacios(valores))
             {

@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaMAV
@@ -41,7 +36,7 @@ namespace SistemaMAV
             CargarTabla();
 
             //obtenemos los datos de la tabla de tipos de usuario
-            SqlCommand consulta = MenuPrincipal.DefinirConsulta("sp_Cargar_Tipos_Usuario",  MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsulta("sp_Cargar_Tipos_Usuario", MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             indtu = new DataTable();
             indtu.Load(respuesta);
@@ -49,7 +44,7 @@ namespace SistemaMAV
 
             //cargamos el combo box con la tabla
             cmbTipoUsuario.DataSource = indtu;
-            cmbTipoUsuario.DisplayMember ="Tipo_Usuario";
+            cmbTipoUsuario.DisplayMember = "Tipo_Usuario";
             cmbTipoUsuario.ValueMember = "ID_Tipo_Usuario";
 
 
@@ -94,7 +89,7 @@ namespace SistemaMAV
                 respuesta.Read();
 
                 //obtenemos los datos de la base de datos
-                txbMatricula.Text= respuesta["Matricula"].ToString();
+                txbMatricula.Text = respuesta["Matricula"].ToString();
                 txbNombre.Text = respuesta["Nombre"].ToString();
                 txbApPat.Text = respuesta["ApPat"].ToString();
                 txbApMat.Text = respuesta["ApMat"].ToString();
@@ -103,7 +98,7 @@ namespace SistemaMAV
                 txbContra.Text = respuesta["Contrasenia"].ToString();
 
                 //obtenemos el indice que corresponde
-                cmbTipoUsuario.SelectedIndex = Convert.ToInt32(respuesta["ID_Tipo_Usuario"])-1;
+                cmbTipoUsuario.SelectedIndex = Convert.ToInt32(respuesta["ID_Tipo_Usuario"]) - 1;
 
                 //desencriptamos la contraseña para mostrarla
                 txbContra.Text = Encriptacion.DesEncriptar(txbContra.Text);
@@ -123,7 +118,7 @@ namespace SistemaMAV
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //dependiendo el tipo de operacion realiza un stored procceudre
-            switch(tipoOp)
+            switch (tipoOp)
             {
                 case 1:
                     AnadirUsuario();
@@ -147,7 +142,7 @@ namespace SistemaMAV
             parametros.Add("@pApMat");
             parametros.Add("@pEmail");
             parametros.Add("@pTelefono");
-            parametros.Add("@pID_Tipo_Usuario"); 
+            parametros.Add("@pID_Tipo_Usuario");
             parametros.Add("@pContrasenia");
 
             //definimos los valores de los parametros
@@ -305,7 +300,7 @@ namespace SistemaMAV
             //cerramos el reader
             respuesta.Close();
 
-            
+
         }
 
         /// <summary>
@@ -318,7 +313,7 @@ namespace SistemaMAV
             //activamos todos los controles
             VaciarCampos();
             ActivarCampos();
-           
+
             //cambiamos a operacion de agregacon
             tipoOp = 1;
         }
@@ -368,7 +363,7 @@ namespace SistemaMAV
             txbContra.Enabled = false;
         }
 
-        
+
 
         /// <summary>
         /// metodo para realizar la edicion de usuarios
@@ -377,7 +372,7 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (tipoOp == 1 || txbMatricula.Text=="")
+            if (tipoOp == 1 || txbMatricula.Text == "")
             {
                 MessageBox.Show("Debes seleccionar un usuario existente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

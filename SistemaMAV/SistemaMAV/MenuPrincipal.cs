@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using System.Net;
-using System.Diagnostics;
-using System.IO;
-using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaMAV
 {
@@ -27,14 +21,16 @@ namespace SistemaMAV
         public static SqlConnection cn;
 
         //validar conexion
-        bool conectado;
+        private bool conectado;
 
-        private static List<string> palabrasProhibidas=new List<string> {"SELECT","UPDATE", "DELETE","CREATE","DROP","ALTER","WHERE","FROM" };
+        private static List<string> palabrasProhibidas = new List<string> { "SELECT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "WHERE", "FROM" };
 
         //usuario actual
         public static string usuarioActual;
 
         public static string cargoActual;
+
+        public static string matriculaActual;
 
         //La pantalla que se muestra en el contenedor central
         private Form pantallaActiva = null;
@@ -73,7 +69,7 @@ namespace SistemaMAV
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MaximizeBox = false;
 
-            
+
         }
 
 
@@ -112,7 +108,7 @@ namespace SistemaMAV
 
         #endregion
 
-       
+
 
         #region funcionalidades
 
@@ -124,12 +120,14 @@ namespace SistemaMAV
         /// Version 1.0
         /// Fecha de creacion 13/03/21
         /// Creador Isaac Librado
-        public static void ValidarLogIn(string pUserName, string pCargo)
+        public static void ValidarLogIn(string pUserName, string pCargo, string pMatricula)
         {
             MenuPrincipal formActual = (MenuPrincipal)ActiveForm;
 
             MenuPrincipal.usuarioActual = pUserName;
             MenuPrincipal.cargoActual = pCargo;
+            MenuPrincipal.matriculaActual = pMatricula;
+
             //colocamos los datos del usuario
             formActual.lblUserName.Text = pUserName;
             formActual.lblCargo.Text = pCargo;
@@ -141,7 +139,7 @@ namespace SistemaMAV
             formActual.pbLogoTemp.Visible = false;
 
             //validamos el tipo de usuario para saber qué mostrar
-            if(pCargo=="Jefe")
+            if (pCargo == "Jefe")
             {
                 formActual.btnSMUsuarios.Visible = false;
                 formActual.btnSMTiposUsuario.Visible = false;
@@ -152,18 +150,18 @@ namespace SistemaMAV
                 formActual.btnSMDevolver.Visible = false;
                 formActual.panelPrestamosSubMenu.Height = 66;
             }
-            else if(pCargo=="Becario" || pCargo=="Solicitante")
+            else if (pCargo == "Becario" || pCargo == "Solicitante")
             {
                 formActual.btnAdmin.Visible = false;
 
-                if(pCargo=="Solicitante")
+                if (pCargo == "Solicitante")
                 {
                     formActual.btnSMPrestar.Visible = false;
                     formActual.btnSMDevolver.Visible = false;
                     formActual.panelPrestamosSubMenu.Height = 66;
                 }
             }
-            else if(pCargo=="Visitante")
+            else if (pCargo == "Visitante")
             {
                 formActual.btnAdmin.Visible = false;
                 formActual.btnSMPrestar.Visible = false;
@@ -344,7 +342,7 @@ namespace SistemaMAV
 
             if (validarConexion(nombreServer))
             {
-                conectado= true;
+                conectado = true;
                 abrirPantallas(new LogIn(cn));
             }
             else
@@ -644,6 +642,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("Consultar Prestamos");
+            abrirPantallas(new ConsultarPrestamos());
         }
 
         /// <summary>
@@ -673,6 +672,7 @@ namespace SistemaMAV
         {
             ocultarSubMenu();
             AsignarTitulo("Devolver Prestamo");
+            abrirPantallas(new DevolverPrestamo());
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)

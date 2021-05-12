@@ -401,7 +401,7 @@ namespace SistemaMAV
             }
             else
             {
-                MessageBox.Show("Debes seleccionar un usuario existente para eliminar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debes seleccionar un material existente para eliminar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

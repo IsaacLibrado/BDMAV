@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace SistemaMAV
 {
-    public partial class ConsultarTiposSolicitante : Form
+    public partial class ConsultarMarcas : Form
     {
         DataTable dt;
-        public ConsultarTiposSolicitante()
+        public ConsultarMarcas()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace SistemaMAV
         private void CargarTabla()
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Tipo_Solicitante_PorNombre_Reduc", "@pTipo_Solicitante", "", SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Marca_Por_Nombre", "@pMarca", "", SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 
@@ -42,15 +42,15 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            MenuPrincipal.AsignarTitulo("ABC Tipos de Solicitantes");
-            MenuPrincipal.abrirPantallas(new ABCTiposSolicitantes());
+            MenuPrincipal.AsignarTitulo("ABC Marcas");
+            MenuPrincipal.abrirPantallas(new ABCMarcas());
         }
 
         //Metodo para consultar en tiempo real la tabla
         private void ConsultarTabla(object sender, EventArgs e)
         {
             //hacemos la consulta por nombre vacio
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Tipo_Solicitante_PorNombre_Reduc", "@pTipo_Solicitante", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Marca_Por_Nombre", "@pMarca", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
             SqlDataReader respuesta = consulta.ExecuteReader();
             dt = new DataTable();
 

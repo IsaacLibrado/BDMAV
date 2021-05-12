@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 //Usamos la libreria de sqlClient
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaMAV
 {
@@ -126,6 +120,8 @@ namespace SistemaMAV
 
             //cerramos el reader
             respuesta.Close();
+
+            dgVistaTabla.Columns[0].Visible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -294,6 +290,12 @@ namespace SistemaMAV
         {
             txbID.Enabled = false;
             txbNombreMarca.Enabled = false;
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal.AsignarTitulo("Consultar Marcas");
+            MenuPrincipal.abrirPantallas(new ConsultarMarcas());
         }
     }
 }

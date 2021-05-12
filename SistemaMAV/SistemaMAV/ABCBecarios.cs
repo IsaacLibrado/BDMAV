@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaMAV
@@ -15,7 +10,7 @@ namespace SistemaMAV
     /// Clase que define a la pantalla de usuarios
     /// </summary>
     public partial class ABCBecarios : Form
-    {   
+    {
         //data tables para la info
         DataTable dt;
         DataTable indtu;
@@ -27,7 +22,7 @@ namespace SistemaMAV
             InitializeComponent();
             dt = new DataTable();
         }
-        
+
         /// <summary>
         /// Metodo para cargar los datos al inicio
         /// </summary>

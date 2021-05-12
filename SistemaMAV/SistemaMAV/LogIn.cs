@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 
 namespace SistemaMAV
@@ -147,7 +139,7 @@ namespace SistemaMAV
                     if (password == respuesta["Contrasenia"].ToString())
                     {
                         validado = true;
-                        MenuPrincipal.ValidarLogIn(respuesta["Nombre"].ToString(), respuesta["Tipo_Usuario"].ToString());
+                        MenuPrincipal.ValidarLogIn(respuesta["Nombre"].ToString(), respuesta["Tipo_Usuario"].ToString(), user);
                         MenuPrincipal.abrirPantallas(new Inicio());
                     }
                 }
@@ -156,7 +148,7 @@ namespace SistemaMAV
                 {
                     //cerramos el dataread y mostramos mensajes de error si no es valido el login
                     MessageBox.Show("Usuario o contraseña incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                 }
                 respuesta.Close();
             }
@@ -165,10 +157,10 @@ namespace SistemaMAV
                 MessageBox.Show("Ingresa un usuario válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
+
         }
 
-        
+
 
         /// <summary>
         /// Cambia al passwordbox después de dar enter en el textbox del usuario
@@ -214,7 +206,7 @@ namespace SistemaMAV
             }
         }
 
-        
+
     }
     public static class Encriptacion
     {
@@ -226,16 +218,16 @@ namespace SistemaMAV
         public static string Encriptar(this string pCadenaAencriptar)
         {
             string result = string.Empty;
-            
+
             //obtenemos cada byte de la cadena
             byte[] encryted = System.Text.Encoding.Unicode.GetBytes(pCadenaAencriptar);
-            
+
             //lo encriptamos en base 64
             result = Convert.ToBase64String(encryted);
             return result;
         }
 
-       
+
         /// <summary>
         /// Desencripta una cadena
         /// </summary>
@@ -251,6 +243,6 @@ namespace SistemaMAV
             return result;
         }
 
-        
+
     }
 }
