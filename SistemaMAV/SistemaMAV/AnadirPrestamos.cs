@@ -54,15 +54,23 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void txbBusqueda_TextChanged(object sender, EventArgs e)
         {
-            ///obtenemos los datos del stored proccedure
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple_Disponible", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
-            SqlDataReader respuesta = consulta.ExecuteReader();
-            dt = new DataTable();
+            if (MenuPrincipal.ValidarPalabrasProhibidas(txbBusqueda.Text))
+            {
+                ///obtenemos los datos del stored proccedure
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Material_Por_Nombre_Simple_Disponible", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+                SqlDataReader respuesta = consulta.ExecuteReader();
+                dt = new DataTable();
 
-            dt.Load(respuesta);
+                dt.Load(respuesta);
 
-            dgVistaTabla.DataSource = dt;
-            respuesta.Close();
+                dgVistaTabla.DataSource = dt;
+                respuesta.Close();
+            }
+            else
+            {
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbBusqueda.Text = "";
+            }
         }
 
         /// <summary>

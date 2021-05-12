@@ -54,22 +54,30 @@ namespace SistemaMAV
         //Metodo para consultar en tiempo real la tabla
         private void ConsultarTabla(object sender, EventArgs e)
         {
-            //hacemos la consulta por nombre 
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Usuario_Por_Nombre", "@pNombre", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
-            SqlDataReader respuesta = consulta.ExecuteReader();
-            dt = new DataTable();
+            if (MenuPrincipal.ValidarPalabrasProhibidas(txbNombre.Text))
+            {
+                //hacemos la consulta por nombre 
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Usuario_Por_Nombre", "@pNombre", txbNombre.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+                SqlDataReader respuesta = consulta.ExecuteReader();
+                dt = new DataTable();
 
-            //cargamos la data table
-            dt.Load(respuesta);
+                //cargamos la data table
+                dt.Load(respuesta);
 
-            //colocamos el datatable en el datagrid 
-            dgVistaTabla.DataSource = dt;
+                //colocamos el datatable en el datagrid 
+                dgVistaTabla.DataSource = dt;
 
-            dgVistaTabla.Columns[1].Width = 200;
-            dgVistaTabla.Columns[2].Width = 120;
+                dgVistaTabla.Columns[1].Width = 200;
+                dgVistaTabla.Columns[2].Width = 120;
 
-            //cerramos el reader
-            respuesta.Close();
+                //cerramos el reader
+                respuesta.Close();
+            }
+            else
+            {
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbNombre.Text = "";
+            }
         }
     }
 }

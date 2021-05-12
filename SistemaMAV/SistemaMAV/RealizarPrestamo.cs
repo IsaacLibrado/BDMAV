@@ -142,15 +142,23 @@ namespace SistemaMAV
 
         private void txbBusquedaSolicitante_TextChanged(object sender, EventArgs e)
         {
-            ///obtenemos los datos del stored proccedure
-            SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Solicitante_PorNombre_Reduc", "@pNombre", txbBusquedaSolicitante.Text, SqlDbType.VarChar, MenuPrincipal.cn);
-            SqlDataReader respuesta = consulta.ExecuteReader();
-            dt = new DataTable();
+            if (MenuPrincipal.ValidarPalabrasProhibidas(txbBusquedaSolicitante.Text))
+            {
+                ///obtenemos los datos del stored proccedure
+                SqlCommand consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Solicitante_PorNombre_Reduc", "@pNombre", txbBusquedaSolicitante.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+                SqlDataReader respuesta = consulta.ExecuteReader();
+                dt = new DataTable();
 
-            dt.Load(respuesta);
+                dt.Load(respuesta);
 
-            dgVistaSolicitantes.DataSource = dt;
-            respuesta.Close();
+                dgVistaSolicitantes.DataSource = dt;
+                respuesta.Close();
+            }
+            else
+            {
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbBusquedaSolicitante.Text = "";
+            }
         }
 
         private void txbId_Prestamo_KeyPress(object sender, KeyPressEventArgs e)

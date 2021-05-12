@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABCBecarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABCBecarios.Designer.cs">
-      <DependentUpon>ABCBecarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABCEstados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,12 +63,6 @@
     </Compile>
     <Compile Include="ABCMateriales.Designer.cs">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABCTiposSolicitantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABCTiposSolicitantes.Designer.cs">
-      <DependentUpon>ABCTiposSolicitantes.cs</DependentUpon>
     </Compile>
     <Compile Include="ABCTiposUsuario.cs">
       <SubType>Form</SubType>
@@ -117,12 +105,6 @@
     </Compile>
     <Compile Include="ConsultarPrestamos.Designer.cs">
       <DependentUpon>ConsultarPrestamos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultarTiposSolicitante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsultarTiposSolicitante.Designer.cs">
-      <DependentUpon>ConsultarTiposSolicitante.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarTiposUsuario.cs">
       <SubType>Form</SubType>
@@ -168,9 +150,6 @@
     <Compile Include="RealizarPrestamo.Designer.cs">
       <DependentUpon>RealizarPrestamo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ABCBecarios.resx">
-      <DependentUpon>ABCBecarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ABCEstados.resx">
       <DependentUpon>ABCEstados.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,9 +158,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABCMateriales.resx">
       <DependentUpon>ABCMateriales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABCTiposSolicitantes.resx">
-      <DependentUpon>ABCTiposSolicitantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABCTiposUsuario.resx">
       <DependentUpon>ABCTiposUsuario.cs</DependentUpon>
@@ -203,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarPrestamos.resx">
       <DependentUpon>ConsultarPrestamos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarTiposSolicitante.resx">
-      <DependentUpon>ConsultarTiposSolicitante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarTiposUsuario.resx">
       <DependentUpon>ConsultarTiposUsuario.cs</DependentUpon>

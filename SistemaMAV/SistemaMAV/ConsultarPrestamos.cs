@@ -47,31 +47,39 @@ namespace SistemaMAV
         /// <param name="e"></param>
         private void txbBusqueda_TextChanged(object sender, EventArgs e)
         {
-            SqlCommand consulta;
-            SqlDataReader respuesta;
-
-            if (MenuPrincipal.cargoActual == "Solicitante")
+            if (MenuPrincipal.ValidarPalabrasProhibidas(txbBusqueda.Text))
             {
-                consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Prestamos_Sin_Devolver_Solicitante", "@pMatricula", MenuPrincipal.matriculaActual, SqlDbType.SmallInt, MenuPrincipal.cn);
-                respuesta = consulta.ExecuteReader();
-                dt = new DataTable();
+                SqlCommand consulta;
+                SqlDataReader respuesta;
 
-                dt.Load(respuesta);
+                if (MenuPrincipal.cargoActual == "Solicitante")
+                {
+                    consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Prestamos_Sin_Devolver_Solicitante", "@pMatricula", MenuPrincipal.matriculaActual, SqlDbType.SmallInt, MenuPrincipal.cn);
+                    respuesta = consulta.ExecuteReader();
+                    dt = new DataTable();
 
-                dgVistaTabla.DataSource = dt;
-                respuesta.Close();
+                    dt.Load(respuesta);
+
+                    dgVistaTabla.DataSource = dt;
+                    respuesta.Close();
+                }
+                else
+                {
+                    ///obtenemos los datos del stored proccedure
+                    consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Prestamos_Por_Nombre", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
+                    respuesta = consulta.ExecuteReader();
+                    dt = new DataTable();
+
+                    dt.Load(respuesta);
+
+                    dgVistaTabla.DataSource = dt;
+                    respuesta.Close();
+                }
             }
             else
             {
-                ///obtenemos los datos del stored proccedure
-                consulta = MenuPrincipal.DefinirConsultaSPar("sp_Buscar_Prestamos_Por_Nombre", "@pNombre", txbBusqueda.Text, SqlDbType.VarChar, MenuPrincipal.cn);
-                respuesta = consulta.ExecuteReader();
-                dt = new DataTable();
-
-                dt.Load(respuesta);
-
-                dgVistaTabla.DataSource = dt;
-                respuesta.Close();
+                MessageBox.Show("Valores incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbBusqueda.Text = "";
             }
         }
 

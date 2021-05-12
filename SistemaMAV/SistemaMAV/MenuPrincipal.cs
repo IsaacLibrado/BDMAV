@@ -23,7 +23,7 @@ namespace SistemaMAV
         //validar conexion
         private bool conectado;
 
-        private static List<string> palabrasProhibidas = new List<string> { "SELECT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "WHERE", "FROM" };
+        private static List<string> palabrasProhibidas = new List<string> { "SELECT", "UPDATE", "DELETE", "CREATE", "DROP", "ALTER", "WHERE", "FROM", "IN", "INSERT", "VIEW", "PROCEDURE", "FUNCTION","TRIGGER", "CONCAT",")","(","'", "\"","+","SUBSTRING","STRING"};
 
         //usuario actual
         public static string usuarioActual;
@@ -465,21 +465,6 @@ namespace SistemaMAV
             mostrarSubMenu(panelAdminSubMenu);
         }
 
-        /// <summary>
-        /// Evento que se realizar al presionar el boton abrir cajas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// Version 1.0
-        /// Fecha de creacion 07 de Marzo 2021
-        /// Creador Isaac Librado
-        private void btnSMBecarios_Click(object sender, EventArgs e)
-        {
-            //Ocultamos el submenu y mostramos la pantalla con su respectivo titulo
-            ocultarSubMenu();
-            AsignarTitulo("ABC Becarios");
-            abrirPantallas(new ABCBecarios());
-        }
 
         /// <summary>
         /// Metodo para el boton salir
@@ -523,21 +508,6 @@ namespace SistemaMAV
             //Ocultamos el submenu y mostramos la pantalla con su respectivo titulo
             ocultarSubMenu();
             AsignarTitulo("ABC Solicitantes");
-        }
-
-        /// <summary>
-        /// Evento que se realizar al presionar el boton tipos de solicitantes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// Version 1.0
-        /// Fecha de creacion 07 de Marzo 2021
-        /// Creador Isaac Librado
-        private void btnSMTiposSolicitante_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-            AsignarTitulo("ABC Tipos de Solicitantes");
-            abrirPantallas(new ABCTiposSolicitantes());
         }
 
         /// <summary>
@@ -690,23 +660,19 @@ namespace SistemaMAV
         /// <returns>false si falta alguno</returns>
         public static bool ValidarCamposVacios(List<string> pValores)
         {
+            bool pasar=true;
+
             foreach (string valor in pValores)
             {
-                if (valor == "")
-                    return false;
-                else
-                {
-                    foreach (string palabra in palabrasProhibidas)
-                    {
-                        if (valor.ToUpper().Contains(palabra))
-                        {
-                            return false;
-                        }
-                    }
-                }
+                if (valor == string.Empty)
+                    pasar= false;
+                pasar = ValidarPalabrasProhibidas(valor);
+
+                if (pasar == false)
+                    break;
             }
 
-            return true;
+            return pasar;
         }
 
         /// <summary>
@@ -716,18 +682,22 @@ namespace SistemaMAV
         /// <returns>false si falta alguno</returns>
         public static bool ValidarCamposVacios(string pValor)
         {
-            if (pValor == "")
+            if (pValor == string.Empty)
                 return false;
-            else
+            return ValidarPalabrasProhibidas(pValor);
+        }
+
+        public static bool ValidarPalabrasProhibidas(string pValor)
+        {
+            string valortemp = string.Concat(pValor.Where(c => !char.IsWhiteSpace(c)));
+            foreach (string palabra in palabrasProhibidas)
             {
-                foreach (string palabra in palabrasProhibidas)
+                if (valortemp.ToUpper().Contains(palabra))
                 {
-                    if (pValor.ToUpper().Contains(palabra))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
+
             return true;
         }
     }
